@@ -37,6 +37,9 @@ class MockIntersectionObserver {
   }
 }
 
+// jsdom elements cannot scroll.
+Element.prototype.scrollTo = function scrollTo() {};
+
 Object.defineProperty(window, "IntersectionObserver", { writable: true, value: MockIntersectionObserver });
 
 // Simulates every observed element entering the viewport.
