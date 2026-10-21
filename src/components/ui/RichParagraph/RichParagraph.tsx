@@ -11,12 +11,8 @@ export function RichParagraph({ paragraph, ...textProps }: RichParagraphProps) {
   return (
     <Text {...textProps}>
       {paragraph.text}
-      {paragraph.strong && (
-        <>
-          {" "}
-          <strong>{paragraph.strong}</strong>
-        </>
-      )}
+      {paragraph.text && paragraph.strong && " "}
+      {paragraph.strong && <strong>{paragraph.strong}</strong>}
     </Text>
   );
 }

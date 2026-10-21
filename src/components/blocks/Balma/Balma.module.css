@@ -1,0 +1,147 @@
+.head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  align-items: start;
+  column-gap: clamp(24px, 4vw, 64px);
+  margin-bottom: clamp(28px, 3.5vw, 44px);
+}
+
+.heading {
+  margin-bottom: 0;
+}
+
+.drawing {
+  justify-self: end;
+  width: 100%;
+  max-width: 380px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(28px, 4vw, 56px);
+}
+
+/* Video teaser */
+.screen {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.screen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 45%, rgb(18 48 90 / 0.6));
+}
+
+.screenImage {
+  object-fit: cover;
+}
+
+.play {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.playBadge {
+  display: grid;
+  place-items: center;
+  width: clamp(68px, 8vw, 92px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--color-accent);
+  transition: transform 0.2s;
+}
+
+.playBadge::before {
+  content: "";
+  margin-left: 5px;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-left: 20px solid var(--color-white);
+}
+
+.play:hover .playBadge {
+  transform: scale(1.06);
+}
+
+.message {
+  position: absolute;
+  top: calc(50% + 60px);
+  left: 50%;
+  z-index: 3;
+  padding: 6px 10px;
+  background: var(--color-white);
+  color: var(--color-text);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  white-space: nowrap;
+  transform: translateX(-50%);
+}
+
+/* Key figures */
+.figures {
+  display: grid;
+  list-style: none;
+}
+
+.figure {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  column-gap: 18px;
+  row-gap: 2px;
+  padding-block: 18px;
+  border-bottom: 1px solid rgb(255 255 255 / 0.3);
+}
+
+.figure:first-child {
+  padding-top: 0;
+}
+
+.figure:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.figureIcon {
+  grid-row: 1 / span 2;
+  color: var(--color-gold);
+}
+
+.figureValue {
+  color: var(--color-gold);
+  font-family: var(--font-display);
+  font-size: clamp(30px, 3vw, 40px);
+  font-stretch: 125%;
+  font-variant-numeric: tabular-nums;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.figureLabel {
+  color: var(--color-white);
+  font-size: var(--text-sm);
+}
+
+@media (max-width: 880px) {
+  .head,
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .drawing {
+    justify-self: start;
+    max-width: 320px;
+    margin-top: 24px;
+  }
+}

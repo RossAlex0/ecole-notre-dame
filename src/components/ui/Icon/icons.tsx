@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 
 export type IconDefinition = {
+  viewBox?: string;
   // Filled icons use currentColor as fill; outlined ones use it as stroke.
   filled?: boolean;
   strokeWidth?: number;
@@ -65,6 +66,43 @@ export const ICONS = {
         d="M12 0 L14 10 L24 12 L14 14 L12 24 L10 14 L0 12 L10 10 Z"
         style={{ fill: "var(--color-gold)", stroke: "var(--color-tan)", strokeWidth: 0.8 }}
       />
+    ),
+  },
+  // Key figure icons (32×32 viewBox, thin stroke).
+  house: {
+    viewBox: "0 0 32 32",
+    strokeWidth: 1.2,
+    content: (
+      <>
+        <path d="M4 15 L16 5 L28 15" />
+        <path d="M7 13 V27 H25 V13" />
+        <path d="M13 27 V19 H19 V27" />
+        <path d="M21 8 V5 H24 V10.5" />
+      </>
+    ),
+  },
+  bus: {
+    viewBox: "0 0 32 32",
+    strokeWidth: 1.2,
+    content: (
+      <>
+        <rect x="6" y="4" width="20" height="20" rx="3" />
+        <path d="M6 15 H26" />
+        <path d="M10 9 H22" />
+        <circle cx="11" cy="19.5" r="1.3" />
+        <circle cx="21" cy="19.5" r="1.3" />
+        <path d="M9 24 V28 M23 24 V28" />
+      </>
+    ),
+  },
+  pin: {
+    viewBox: "0 0 32 32",
+    strokeWidth: 1.2,
+    content: (
+      <>
+        <path d="M16 29 C16 29 7 20 7 13 a9 9 0 0 1 18 0 C25 20 16 29 16 29 Z" />
+        <circle cx="16" cy="13" r="3.2" />
+      </>
     ),
   },
   heart: {
