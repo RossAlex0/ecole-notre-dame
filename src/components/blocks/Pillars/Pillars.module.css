@@ -1,0 +1,49 @@
+.pillars {
+  margin-top: clamp(48px, 6vw, 80px);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(24px, 3vw, 48px);
+  list-style: none;
+}
+
+.card {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  padding: 16px 16px 26px;
+  border: 1px solid var(--color-border);
+  background: var(--color-white);
+  transition:
+    transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1),
+    box-shadow 0.45s;
+}
+
+.card:hover {
+  transform: translateY(-6px) rotate(-0.4deg);
+  box-shadow: 0 22px 40px -24px rgb(26 66 119 / 0.45);
+}
+
+.card:nth-child(2):hover {
+  transform: translateY(-6px) rotate(0.4deg);
+}
+
+.media {
+  position: relative;
+  aspect-ratio: 4 / 3.4;
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
+}
+
+@media (max-width: 820px) {
+  .grid {
+    grid-template-columns: 1fr;
+    max-width: 460px;
+    margin-inline: auto;
+  }
+}
