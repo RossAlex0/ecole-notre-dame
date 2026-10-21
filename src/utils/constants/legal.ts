@@ -2,11 +2,12 @@
 // Values marked TO_COMPLETE must be provided by the school before going live.
 export const TO_COMPLETE = "[À compléter]";
 
+// Source: annuaire-entreprises.data.gouv.fr (SIREN 841036528, nature juridique 9220).
 export const PUBLISHER = {
-  name: TO_COMPLETE,
-  legalForm: TO_COMPLETE,
-  registration: TO_COMPLETE,
-  address: TO_COMPLETE,
+  name: "École secondaire privée hors contrat Notre-Dame de l'Aurore",
+  legalForm: "association déclarée",
+  registration: "SIREN 841 036 528",
+  address: "3 impasse Malcousinat, 31380 Gragnague",
   publicationDirector: TO_COMPLETE,
 } as const;
 
