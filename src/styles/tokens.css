@@ -1,0 +1,36 @@
+/* Design tokens extracted from the "One page Atelier" mockup. */
+:root {
+  /* Colors */
+  --color-primary: #1a4277;
+  --color-primary-dark: #12305a;
+  --color-accent: #dc5a1e;
+  --color-accent-dark: #b84812;
+  --color-accent-light: #f7b48f;
+  --color-gold: #f2c462;
+  --color-tan: #c99a62;
+  --color-text: #22252d;
+  --color-text-muted: #5b606c;
+  --color-paper: #f4f3ef;
+  --color-white: #ffffff;
+  --color-border: rgb(34 37 45 / 0.14);
+  --color-grid-line: rgb(31 51 196 / 0.07);
+
+  /* Typography (font variables are injected by styles/fonts.ts) */
+  --font-display: var(--font-archivo), "Arial Black", system-ui, sans-serif;
+  --font-text: var(--font-archivo), system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, Menlo, monospace;
+  --font-hand: var(--font-belle-aurore), "Bradley Hand", cursive;
+  --font-quote: var(--font-playfair), Georgia, serif;
+
+  /* Layout */
+  --container-max: 1180px;
+  --gutter: clamp(16px, 5vw, 72px);
+  --section-padding: clamp(56px, 7vw, 96px);
+  --nav-height: 74px;
+
+  /* Focus */
+  --focus-ring: 3px solid var(--color-accent);
+  --focus-offset: 3px;
+
+  color-scheme: light;
+}
