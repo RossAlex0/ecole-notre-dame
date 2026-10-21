@@ -29,7 +29,7 @@ export function Header() {
           ))}
         </nav>
 
-        <Button href={DONATE_LINK.href} variant="accent" size="sm">
+        <Button href={DONATE_LINK.href} variant="accent" size="sm" className={styles.cta}>
           {DONATE_LINK.label}
         </Button>
 

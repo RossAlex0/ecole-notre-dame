@@ -81,10 +81,12 @@
   font-style: normal;
 }
 
+/* Icons stay on the first line when the address wraps. */
 .coord {
   display: inline-flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
+  line-height: 18px;
   color: inherit;
   text-decoration: none;
 }

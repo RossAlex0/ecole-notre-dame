@@ -1,7 +1,12 @@
+import { Container } from "@/components/ui/Container";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { SCHOOL_NAME } from "@/utils/constants/contact";
+
+// Temporary placeholder until the page blocks are built.
 export default function Home() {
   return (
-    <main>
-      <h1>Collège Notre-Dame de l&apos;Aurore</h1>
-    </main>
+    <Container>
+      <SectionHeading title={SCHOOL_NAME} level={1} />
+    </Container>
   );
 }

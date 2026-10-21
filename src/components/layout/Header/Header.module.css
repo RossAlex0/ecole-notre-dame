@@ -18,6 +18,11 @@
   margin-right: auto;
 }
 
+.cta {
+  flex: none;
+  white-space: nowrap;
+}
+
 .links {
   display: flex;
   gap: 28px;
