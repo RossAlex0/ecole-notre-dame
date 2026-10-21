@@ -2,7 +2,7 @@ import { render, screen, within } from "@testing-library/react";
 import { Footer } from "./Footer";
 import { FOOTER_CONTENT } from "@/content/footer";
 import { SCHOOL, SCHOOL_NAME } from "@/utils/constants/contact";
-import { SOCIAL_LINKS } from "@/utils/constants/links";
+import { CREDITS, SOCIAL_LINKS } from "@/utils/constants/links";
 import { LEGAL_LINKS } from "@/utils/constants/navigation";
 import { toMailHref, toTelHref } from "@/utils/link";
 
@@ -67,6 +67,7 @@ describe("Footer", () => {
         toTelHref(SCHOOL.phone),
         toMailHref(SCHOOL.email),
         ...LEGAL_LINKS.map((link) => link.href),
+        ...CREDITS.map((credit) => credit.href),
       ];
       const rendered = screen.getAllByRole("link").map((link) => link.getAttribute("href"));
 
