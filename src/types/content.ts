@@ -1,3 +1,4 @@
+import type { ContactPerson } from "@/utils/constants/contact";
 import type { ImageAsset } from "@/utils/constants/images";
 import type { NavLink } from "@/utils/constants/navigation";
 
@@ -56,6 +57,28 @@ export type InscriptionsContent = {
   paragraphs: readonly RichParagraph[];
   cta: CallToAction;
   picture: Picture;
+};
+
+export type Testimonial = {
+  quote: string;
+  author: string;
+};
+
+export type TestimonialsContent = {
+  title: string;
+  highlight: string;
+  items: readonly Testimonial[];
+};
+
+export type ContactCard = {
+  person: ContactPerson;
+  picture: Picture;
+};
+
+export type ContactContent = {
+  title: string;
+  highlight: string;
+  cards: readonly ContactCard[];
 };
 
 export type PillarsContent = {
