@@ -1,3 +1,5 @@
+import { DIRECTOR } from "./contact";
+
 // Legal publisher and host details for the mandatory pages (LCEN, RGPD).
 // Values marked TO_COMPLETE must be provided by the school before going live.
 export const TO_COMPLETE = "[À compléter]";
@@ -8,7 +10,7 @@ export const PUBLISHER = {
   legalForm: "association déclarée",
   registration: "SIREN 841 036 528",
   address: "3 impasse Malcousinat, 31380 Gragnague",
-  publicationDirector: TO_COMPLETE,
+  publicationDirector: `${DIRECTOR.name}, ${DIRECTOR.role.toLowerCase()}`,
 } as const;
 
 // To verify: two addresses are published for Vercel Inc. (Covina and Walnut, CA).
