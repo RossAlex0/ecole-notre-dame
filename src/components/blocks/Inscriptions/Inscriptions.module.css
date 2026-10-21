@@ -1,0 +1,31 @@
+.inscriptions {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(32px, 6vw, 88px);
+}
+
+.copy {
+  display: grid;
+  align-content: start;
+  gap: 20px;
+}
+
+.heading {
+  margin-bottom: 0;
+}
+
+.paragraph {
+  max-width: 46ch;
+}
+
+.cta {
+  justify-self: start;
+  margin-top: 6px;
+}
+
+@media (max-width: 860px) {
+  .inscriptions {
+    grid-template-columns: 1fr;
+  }
+}
