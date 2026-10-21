@@ -10,12 +10,12 @@ export type IconProps = {
 };
 
 export function Icon({ name, size = 24, label, className }: IconProps) {
-  const { filled, strokeWidth, content }: IconDefinition = ICONS[name];
+  const { viewBox = "0 0 24 24", filled, strokeWidth, content }: IconDefinition = ICONS[name];
   const a11yProps = label ? { role: "img", "aria-label": label } : { "aria-hidden": true };
 
   return (
     <svg
-      viewBox="0 0 24 24"
+      viewBox={viewBox}
       width={size}
       height={size}
       fill={filled ? "currentColor" : "none"}
