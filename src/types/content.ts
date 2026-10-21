@@ -81,6 +81,42 @@ export type ContactContent = {
   cards: readonly ContactCard[];
 };
 
+// Inline rich text: plain strings, bold parts and links, rendered without added spaces.
+export type TextSegment = string | { strong: string } | { label: string; href: string };
+
+export type DonorProfile = {
+  id: string;
+  label: string;
+  reductionRate: number;
+  title: string;
+  text: readonly TextSegment[];
+};
+
+export type PaymentMethod = {
+  id: string;
+  label: string;
+  text: readonly TextSegment[];
+  details?: readonly string[];
+  cta?: CallToAction & { variant: "accent" | "outline-light"; external?: boolean; download?: boolean };
+};
+
+export type DonationContent = {
+  title: string;
+  highlight: string;
+  lede: string;
+  campaign: { collected: number; goal: number };
+  simulator: {
+    title: string;
+    profilesLabel: string;
+    profiles: readonly DonorProfile[];
+    amountLabel: string;
+    defaultAmount: number;
+    resultLabel: string;
+  };
+  payment: { title: string; methodsLabel: string; methods: readonly PaymentMethod[] };
+  receipt: { title: string; text: string; cta: CallToAction };
+};
+
 export type PillarsContent = {
   title: string;
   highlight: string;

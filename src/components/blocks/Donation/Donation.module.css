@@ -1,0 +1,77 @@
+.head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+  align-items: center;
+  column-gap: clamp(24px, 4vw, 64px);
+  margin-bottom: clamp(28px, 3.5vw, 44px);
+}
+
+.heading {
+  margin-bottom: 0;
+}
+
+.heading p {
+  max-width: none;
+  color: rgb(255 255 255 / 0.82);
+}
+
+.chart {
+  justify-self: end;
+  width: 100%;
+  max-width: 420px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: stretch;
+  gap: clamp(32px, 5vw, 72px);
+}
+
+.rightColumn {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 20px;
+}
+
+/* Outlined card shared by steps 2 and 3. */
+.card {
+  display: grid;
+  align-content: start;
+  gap: 22px;
+  padding: clamp(22px, 3vw, 36px);
+  border: 1px solid rgb(255 255 255 / 0.45);
+}
+
+.receipt {
+  gap: 8px;
+}
+
+.receiptText {
+  color: rgb(255 255 255 / 0.82);
+  font-size: var(--text-md);
+  line-height: 1.6;
+}
+
+.receiptCta {
+  justify-self: start;
+  margin-top: 8px;
+}
+
+@media (max-width: 880px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 860px) {
+  .head {
+    grid-template-columns: 1fr;
+  }
+
+  .chart {
+    justify-self: start;
+    max-width: 400px;
+    margin-top: 24px;
+  }
+}

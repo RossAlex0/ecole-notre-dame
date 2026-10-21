@@ -1,0 +1,100 @@
+.simulator {
+  display: grid;
+  gap: 22px;
+  padding: clamp(22px, 3vw, 36px);
+  border: 1.5px solid var(--color-text);
+  background: var(--color-white);
+  color: var(--color-text);
+}
+
+.profiles {
+  border-left: 3px solid var(--color-accent);
+  background: var(--color-paper);
+}
+
+.profile {
+  display: grid;
+  align-content: start;
+  gap: 4px;
+  padding: 14px 18px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.profile b {
+  color: var(--color-primary);
+}
+
+.profile p {
+  color: var(--color-muted);
+}
+
+.profile a {
+  color: inherit;
+  font-weight: 600;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+.field label {
+  color: var(--color-muted);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.amount {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  max-width: 260px;
+  border-bottom: 2px solid var(--color-muted);
+  color: var(--color-muted);
+  font-family: var(--font-display);
+  font-weight: 900;
+}
+
+.amount input {
+  width: 100%;
+  padding: 4px 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 36px;
+  font-stretch: 115%;
+  font-variant-numeric: tabular-nums;
+}
+
+.amount span {
+  font-size: 30px;
+}
+
+.result {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 18px;
+  border-top: 1px solid var(--color-border);
+}
+
+.result p {
+  color: var(--color-muted);
+  font-size: var(--text-md);
+}
+
+.result b {
+  color: var(--color-accent);
+  font-family: var(--font-display);
+  font-size: clamp(40px, 4.4vw, 56px);
+  font-stretch: 125%;
+  font-variant-numeric: tabular-nums;
+  font-weight: 900;
+  line-height: 1;
+}
