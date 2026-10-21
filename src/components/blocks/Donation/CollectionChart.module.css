@@ -1,0 +1,101 @@
+.chart svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.house path,
+.trees path {
+  fill: none;
+  stroke: var(--color-white);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.house path {
+  stroke-width: 2;
+}
+
+.house .thin {
+  stroke-width: 1;
+  opacity: 0.45;
+}
+
+.trees path {
+  stroke-width: 1.8;
+}
+
+.ground {
+  fill: none;
+  stroke: var(--color-white);
+  stroke-width: 2;
+}
+
+.dimension {
+  fill: none;
+  stroke: var(--color-white);
+  stroke-dasharray: 5 5;
+  stroke-width: 1.4;
+}
+
+.total {
+  fill: none;
+  stroke: rgb(255 255 255 / 0.7);
+  stroke-width: 1.4;
+}
+
+.chart text {
+  fill: var(--color-white);
+  font-family: var(--font-text);
+}
+
+.chart .big {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-stretch: 105%;
+  font-style: italic;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+}
+
+.sub {
+  font-size: 14px;
+}
+
+.bold {
+  font-weight: 800;
+}
+
+.chart text.gold {
+  fill: var(--color-gold);
+}
+
+.dimension.gold {
+  stroke: var(--color-gold);
+}
+
+.scribble path {
+  fill: none;
+  stroke: var(--color-gold);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 7.5;
+  opacity: 0.95;
+}
+
+/* Drawn only when motion is allowed; static and fully visible otherwise. */
+.animated .scribble path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+
+.animated.run .scribble path {
+  animation: draw 0.55s linear var(--_delay) forwards;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

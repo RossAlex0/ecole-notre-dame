@@ -1,0 +1,25 @@
+.method {
+  display: grid;
+  align-content: start;
+  gap: 18px;
+  color: rgb(255 255 255 / 0.85);
+  font-size: var(--text-md);
+  line-height: 1.6;
+}
+
+.method strong {
+  color: var(--color-white);
+}
+
+.details {
+  color: var(--color-gold);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.03em;
+  line-height: 1.7;
+  user-select: all;
+}
+
+.cta {
+  justify-self: start;
+}

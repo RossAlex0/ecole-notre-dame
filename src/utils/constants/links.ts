@@ -1,5 +1,5 @@
 import { toMailHref } from "@/utils/link";
-import { DIRECTOR } from "./contact";
+import { AGLAE_PRESIDENT, DIRECTOR } from "./contact";
 
 export type SocialLink = {
   name: "youtube" | "instagram";
@@ -21,6 +21,11 @@ export const HELLOASSO_URL =
 
 export const MAIL_LINKS = {
   registration: toMailHref(DIRECTOR.email, { subject: "Inscription 2027" }),
+  ifiDonation: toMailHref(AGLAE_PRESIDENT.email, { subject: "Don IFI" }),
+  taxReceipt: toMailHref(AGLAE_PRESIDENT.email, {
+    subject: "Mes coordonnées pour le reçu fiscal",
+    body: "Bonjour,\n\nVoici mes coordonnées pour recevoir mon reçu fiscal :\n\nNom et prénom : \nAdresse postale : \nE-mail : \nPortable : \n\nMerci !",
+  }),
 } as const;
 
 export const DOCUMENTS = {

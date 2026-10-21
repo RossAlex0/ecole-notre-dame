@@ -1,0 +1,31 @@
+.stepTitle {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.number {
+  color: var(--color-tan);
+  font-family: var(--font-display);
+  font-size: 34px;
+  font-stretch: 125%;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.label {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-stretch: 115%;
+  font-weight: 800;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.light .label {
+  color: var(--color-primary);
+}
+
+.dark .label {
+  color: var(--color-white);
+}
