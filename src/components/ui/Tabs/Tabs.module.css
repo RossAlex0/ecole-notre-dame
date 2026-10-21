@@ -1,0 +1,71 @@
+/* Each tone only sets colors; .tabs and .tab consume them. */
+.tabs {
+  display: grid;
+  border: var(--_border-width) solid var(--_line);
+}
+
+.light {
+  --_border-width: 1.5px;
+  --_line: var(--color-primary);
+  --_bg: var(--color-white);
+  --_fg: var(--color-primary);
+  --_bg-selected: var(--color-primary);
+  --_fg-selected: var(--color-white);
+  --_bg-hover: var(--color-paper);
+  --_weight: 700;
+}
+
+.dark {
+  --_border-width: 1px;
+  --_line: rgb(255 255 255 / 0.45);
+  --_bg: transparent;
+  --_fg: var(--color-white);
+  --_bg-selected: var(--color-white);
+  --_fg-selected: var(--color-primary);
+  --_bg-hover: rgb(255 255 255 / 0.08);
+  --_weight: 600;
+}
+
+.tab {
+  padding: 12px 4px;
+  border: 0;
+  border-right: var(--_border-width) solid var(--_line);
+  background: var(--_bg);
+  color: var(--_fg);
+  font-family: var(--font-text);
+  font-size: 15px;
+  font-weight: var(--_weight);
+  cursor: pointer;
+}
+
+.tab:last-child {
+  border-right: 0;
+}
+
+.tab:hover {
+  background: var(--_bg-hover);
+}
+
+.tab[aria-selected="true"] {
+  background: var(--_bg-selected);
+  color: var(--_fg-selected);
+}
+
+@media (max-width: 420px) {
+  .tab {
+    padding: 11px 2px;
+    font-size: 13px;
+  }
+}
+
+.panels {
+  display: grid;
+}
+
+.panel {
+  grid-area: 1 / 1;
+}
+
+.panel[data-active="false"] {
+  visibility: hidden;
+}
