@@ -38,17 +38,17 @@ export function Footer() {
 
         <address className={styles.coords}>
           <span className={styles.coord}>
-            <Icon name="location" size={18} />
+            <Icon name="location" size={16} />
             <span>
               {SCHOOL.address} <span className={styles.note}>· {SCHOOL.addressNote}</span>
             </span>
           </span>
           <a href={toTelHref(SCHOOL.phone)} className={styles.coord}>
-            <Icon name="phone" size={18} />
+            <Icon name="phone" size={16} />
             {SCHOOL.phone}
           </a>
           <a href={toMailHref(SCHOOL.email)} className={styles.coord}>
-            <Icon name="mail" size={18} />
+            <Icon name="mail" size={16} />
             {SCHOOL.email}
           </a>
         </address>
