@@ -36,11 +36,23 @@
   --container-max: 1180px;
   --gutter: clamp(16px, 5vw, 72px);
   --section-padding: clamp(56px, 7vw, 96px);
-  --nav-height: 74px;
+  --nav-height: 98px;
+  --logo-md: 64px;
+  --logo-lg: 124px;
 
   /* Focus */
   --focus-ring: 3px solid var(--color-accent);
   --focus-offset: 3px;
 
   color-scheme: light;
+}
+
+/* Breakpoints (media queries cannot read custom properties):
+   - 960px: desktop navigation ↔ mobile menu
+   - 460px: small phones */
+@media (max-width: 460px) {
+  :root {
+    --nav-height: 76px;
+    --logo-md: 46px;
+  }
 }

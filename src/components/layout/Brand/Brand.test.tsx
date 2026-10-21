@@ -8,7 +8,7 @@ describe("Brand", () => {
       const wrapper = container.firstElementChild as HTMLElement;
 
       expect(wrapper.tagName).toBe("DIV");
-      expect(wrapper.style.getPropertyValue("--_logo-width")).toBe("64px");
+      expect(wrapper.style.getPropertyValue("--_logo-width")).toBe("var(--logo-md)");
       expect(screen.getByText(/Collège/).style.getPropertyValue("--_color")).toBe(
         "var(--color-primary)",
       );
@@ -35,7 +35,7 @@ describe("Brand", () => {
       const { container } = render(<Brand size="lg" color="white" />);
 
       expect((container.firstElementChild as HTMLElement).style.getPropertyValue("--_logo-width")).toBe(
-        "124px",
+        "var(--logo-lg)",
       );
       expect(screen.getByText(/Collège/).style.getPropertyValue("--_color")).toBe("var(--color-white)");
     });

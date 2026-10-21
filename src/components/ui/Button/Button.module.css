@@ -4,16 +4,18 @@
   --_border: transparent;
   --_bg-hover: var(--_bg);
   --_fg-hover: var(--_fg);
+  --_padding: 15px 24px;
+  --_font-size: var(--text-md);
 
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 15px 24px;
+  padding: var(--_padding);
   border: 2px solid var(--_border);
   background: var(--_bg);
   color: var(--_fg);
   font-family: var(--font-text);
-  font-size: var(--text-md);
+  font-size: var(--_font-size);
   font-weight: 700;
   line-height: 1.2;
   text-decoration: none;
@@ -26,6 +28,17 @@
 .button:hover {
   background: var(--_bg-hover);
   color: var(--_fg-hover);
+}
+
+.sm {
+  --_padding: 11px 18px;
+  --_font-size: var(--text-sm);
+}
+
+@media (max-width: 460px) {
+  .sm {
+    --_padding: 10px 12px;
+  }
 }
 
 .icon {

@@ -1,0 +1,21 @@
+.track {
+  position: absolute;
+  inset-inline: 0;
+  bottom: -1px;
+  height: 2px;
+  pointer-events: none;
+}
+
+.bar {
+  display: block;
+  height: 100%;
+  background: var(--color-accent);
+  transform: scaleX(var(--_progress, 0));
+  transform-origin: left;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    display: none;
+  }
+}

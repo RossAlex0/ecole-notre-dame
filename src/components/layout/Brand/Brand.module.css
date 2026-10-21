@@ -15,3 +15,9 @@
   font-stretch: 115%;
   line-height: 1.15;
 }
+
+@media (max-width: 460px) {
+  .brand .name {
+    font-size: var(--text-xs);
+  }
+}
