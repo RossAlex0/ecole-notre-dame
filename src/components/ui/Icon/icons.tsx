@@ -1,0 +1,64 @@
+import type { ReactNode } from "react";
+
+export type IconDefinition = {
+  // Filled icons use currentColor as fill; outlined ones use it as stroke.
+  filled?: boolean;
+  strokeWidth?: number;
+  content: ReactNode;
+};
+
+// Paths taken from the "One page Atelier" mockup (24×24 viewBox).
+export const ICONS = {
+  menu: {
+    strokeWidth: 2.2,
+    content: <path d="M3 6h18M3 12h18M3 18h18" />,
+  },
+  youtube: {
+    filled: true,
+    content: (
+      <path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2 26 26 0 0 0 2 12a26 26 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8A26 26 0 0 0 22 12a26 26 0 0 0-.4-4.8zM10 15V9l5.2 3z" />
+    ),
+  },
+  instagram: {
+    strokeWidth: 1.8,
+    content: (
+      <>
+        <rect x="3.5" y="3.5" width="17" height="17" rx="5" />
+        <circle cx="12" cy="12" r="4" />
+        <circle cx="17.2" cy="6.8" r=".9" fill="currentColor" stroke="none" />
+      </>
+    ),
+  },
+  location: {
+    strokeWidth: 1.4,
+    content: (
+      <>
+        <path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z" />
+        <circle cx="12" cy="9.5" r="2.5" />
+      </>
+    ),
+  },
+  phone: {
+    strokeWidth: 1.4,
+    content: (
+      <path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z" />
+    ),
+  },
+  mail: {
+    strokeWidth: 1.4,
+    content: (
+      <>
+        <rect x="3" y="5" width="18" height="14" rx="1" />
+        <path d="M3 6l9 7 9-7" />
+      </>
+    ),
+  },
+  heart: {
+    strokeWidth: 2,
+    content: (
+      <path d="M12 20.5s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.5 2.7c0 5.6-7.5 10.2-7.5 10.2z" />
+    ),
+  },
+} as const satisfies Record<string, IconDefinition>;
+
+export type IconName = keyof typeof ICONS;
