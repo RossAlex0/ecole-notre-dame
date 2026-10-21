@@ -1,0 +1,23 @@
+.section {
+  padding-block: var(--section-padding);
+  scroll-margin-top: var(--nav-height);
+}
+
+.white {
+  background: var(--color-white);
+}
+
+/* Graph paper used by the mockup for the hero and registration sections. */
+.paper {
+  background-color: var(--color-paper);
+  background-image:
+    linear-gradient(var(--color-grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-grid-line) 1px, transparent 1px);
+  background-position: -1px -1px;
+  background-size: 28px 28px;
+}
+
+.primary {
+  background: var(--color-primary);
+  color: var(--color-white);
+}

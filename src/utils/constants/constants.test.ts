@@ -1,5 +1,6 @@
 import { existsSync } from "node:fs";
 import path from "node:path";
+import { HERO_CONTENT } from "@/content/hero";
 import { SCHOOL, SCHOOL_NAME } from "./contact";
 import { IMAGES } from "./images";
 import { DOCUMENTS, SOCIAL_LINKS } from "./links";
@@ -25,7 +26,9 @@ describe("constants", () => {
     });
 
     it("targets existing section ids from every internal link", () => {
-      [...NAV_LINKS, DONATE_LINK, CONTACT_LINK].forEach((link) => {
+      const contentLinks = [HERO_CONTENT.filmCta, HERO_CONTENT.registrationCta];
+
+      [...NAV_LINKS, DONATE_LINK, CONTACT_LINK, ...contentLinks].forEach((link) => {
         expect(sectionAnchors).toContain(link.href);
       });
     });

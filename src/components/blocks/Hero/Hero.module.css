@@ -1,0 +1,63 @@
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  align-items: start;
+  gap: clamp(40px, 6vw, 88px);
+}
+
+.motto {
+  margin-bottom: 20px;
+}
+
+.title {
+  font-stretch: 112%;
+  line-height: 0.96;
+}
+
+.paragraphs {
+  display: grid;
+  gap: 14px;
+  max-width: 60ch;
+  margin-top: 20px;
+}
+
+.paragraphs strong {
+  font-weight: 700;
+}
+
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+/* Orange round play badge inside the film button. */
+.play {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: var(--color-white);
+  transition: transform 0.3s;
+}
+
+.play svg {
+  margin-left: 2px;
+}
+
+a:hover .play {
+  transform: scale(1.1);
+}
+
+.photo {
+  margin-top: clamp(24px, 3vw, 44px);
+}
+
+@media (max-width: 880px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+}

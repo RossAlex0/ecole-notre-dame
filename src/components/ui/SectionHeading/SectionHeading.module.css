@@ -1,10 +1,18 @@
 .heading {
   display: grid;
   gap: 16px;
+  margin-bottom: clamp(28px, 3.5vw, 44px);
+}
+
+.start {
   max-width: 760px;
-  margin-bottom: clamp(32px, 4vw, 52px);
+}
+
+.center {
+  text-align: center;
+  justify-items: center;
 }
 
 .lede {
-  max-width: 54ch;
+  max-width: 60ch;
 }

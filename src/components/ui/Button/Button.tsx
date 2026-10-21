@@ -1,20 +1,24 @@
-import type { ButtonHTMLAttributes, ReactNode } from "react";
+import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from "react";
 import { cn } from "@/utils/cn";
+import { EXTERNAL_LINK_PROPS } from "@/utils/link";
 import styles from "./Button.module.css";
 
 export type ButtonVariant = "primary" | "accent" | "outline" | "outline-light";
+export type ButtonSize = "md" | "sm";
 
 type BaseProps = {
   variant?: ButtonVariant;
+  size?: ButtonSize;
   icon?: ReactNode;
   className?: string;
   children: ReactNode;
 };
 
-type LinkButtonProps = BaseProps & {
-  href: string;
-  external?: boolean;
-};
+type LinkButtonProps = BaseProps &
+  Omit<AnchorHTMLAttributes<HTMLAnchorElement>, keyof BaseProps | "href" | "target" | "rel"> & {
+    href: string;
+    external?: boolean;
+  };
 
 type NativeButtonProps = BaseProps &
   Omit<ButtonHTMLAttributes<HTMLButtonElement>, keyof BaseProps> & {
@@ -23,8 +27,16 @@ type NativeButtonProps = BaseProps &
 
 export type ButtonProps = LinkButtonProps | NativeButtonProps;
 
-export function Button({ variant = "primary", icon, className, children, ...rest }: ButtonProps) {
-  const classes = cn(styles.button, styles[variant], className);
+export function Button({
+  variant = "primary",
+  size = "md",
+  icon,
+  className,
+  children,
+  ...rest
+}: ButtonProps) {
+  // "md" is the base style, so it has no dedicated class.
+  const classes = cn(styles.button, styles[variant], size !== "md" && styles[size], className);
   const content = (
     <>
       {icon && (
@@ -37,10 +49,10 @@ export function Button({ variant = "primary", icon, className, children, ...rest
   );
 
   if (rest.href !== undefined) {
-    const externalProps = rest.external ? { target: "_blank", rel: "noopener noreferrer" } : {};
+    const { external, ...anchorProps } = rest;
 
     return (
-      <a href={rest.href} className={classes} {...externalProps}>
+      <a {...anchorProps} className={classes} {...(external ? EXTERNAL_LINK_PROPS : {})}>
         {content}
       </a>
     );

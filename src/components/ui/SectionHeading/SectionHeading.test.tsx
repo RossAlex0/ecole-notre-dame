@@ -41,6 +41,37 @@ describe("SectionHeading", () => {
     });
   });
 
+  describe("tone, alignment and size", () => {
+    it("uses the light tone, start alignment and 2xl size by default", () => {
+      render(<SectionHeading title="Cap" highlight="Balma" />);
+      const heading = screen.getByRole("heading");
+
+      expect(heading.parentElement).toHaveClass("heading", "start");
+      expect(heading.style.getPropertyValue("--_size")).toBe("var(--text-2xl)");
+      expect(heading.style.getPropertyValue("--_color")).toBe("var(--color-primary)");
+    });
+
+    it("renders the dark tone used on blue sections: white title and gold highlight", () => {
+      render(<SectionHeading title="Cap" highlight="Balma 2027" lede="Intro" tone="dark" />);
+
+      expect(screen.getByRole("heading").style.getPropertyValue("--_color")).toBe("var(--color-white)");
+      expect(screen.getByText("Balma 2027").style.getPropertyValue("--_color")).toBe("var(--color-gold)");
+      expect(screen.getByText("Intro").style.getPropertyValue("--_color")).toBe("var(--color-white)");
+    });
+
+    it("centers the heading", () => {
+      render(<SectionHeading title="Trois piliers" align="center" />);
+
+      expect(screen.getByRole("heading").parentElement).toHaveClass("center");
+    });
+
+    it("keeps the highlight at the same size as the title on an h1", () => {
+      render(<SectionHeading title="Collège" highlight="Aurore" level={1} />);
+
+      expect(screen.getByText("Aurore").style.getPropertyValue("--_size")).toBe("var(--text-3xl)");
+    });
+  });
+
   describe("edge cases", () => {
     it("ignores an empty highlight without adding a trailing space", () => {
       render(<SectionHeading title="Titre" highlight="" />);

@@ -1,0 +1,33 @@
+.burger {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 2px solid var(--color-primary);
+  background: none;
+  color: var(--color-primary);
+  cursor: pointer;
+}
+
+/* Positioned against the sticky header. */
+.drawer {
+  position: absolute;
+  top: 100%;
+  inset-inline: 0;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-white);
+}
+
+.list {
+  display: grid;
+  padding-block: 4px 16px;
+}
+
+.link {
+  padding-block: 13px;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: none;
+}

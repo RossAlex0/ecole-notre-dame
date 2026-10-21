@@ -10,6 +10,7 @@ describe("Button", () => {
 
       expect(button).toHaveAttribute("type", "button");
       expect(button).toHaveClass("button", "primary");
+      expect(button).not.toHaveClass("sm");
     });
 
     it("renders a link without target or rel when external is not set", () => {
@@ -55,6 +56,18 @@ describe("Button", () => {
       expect(link).toHaveAttribute("rel", "noopener noreferrer");
     });
 
+    it("forwards anchor attributes such as aria-label to the link", () => {
+      render(
+        <Button href="#balma" aria-label="2 minutes pour nous connaître : voir le film du collège">
+          2 minutes pour nous connaître
+        </Button>,
+      );
+
+      expect(
+        screen.getByRole("link", { name: "2 minutes pour nous connaître : voir le film du collège" }),
+      ).toHaveAttribute("href", "#balma");
+    });
+
     it("renders an icon hidden from assistive technologies", () => {
       render(
         <Button href="#film" icon={<svg data-testid="play" />}>
@@ -82,6 +95,22 @@ describe("Button", () => {
   });
 
   describe("edge cases", () => {
+    it("adds no size class when md is passed explicitly", () => {
+      render(<Button size="md">Medium</Button>);
+
+      expect(screen.getByRole("button").className).toBe("button primary");
+    });
+
+    it("combines the small size with any variant", () => {
+      render(
+        <Button href="#soutenir" variant="accent" size="sm">
+          Faire un don
+        </Button>,
+      );
+
+      expect(screen.getByRole("link")).toHaveClass("button", "accent", "sm");
+    });
+
     it("does not call onClick when disabled", () => {
       const onClick = jest.fn();
       render(
