@@ -1,0 +1,10 @@
+.heading {
+  display: grid;
+  gap: 16px;
+  max-width: 760px;
+  margin-bottom: clamp(32px, 4vw, 52px);
+}
+
+.lede {
+  max-width: 54ch;
+}

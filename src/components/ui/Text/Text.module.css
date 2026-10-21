@@ -1,0 +1,39 @@
+/* Size and color come from tokens, resolved in Text.tsx. */
+.text {
+  font-size: var(--_size);
+  color: var(--_color);
+}
+
+.display {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-stretch: 125%;
+  text-transform: uppercase;
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-stretch: 110%;
+  line-height: 1.1;
+}
+
+.body {
+  font-family: var(--font-text);
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.mono {
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  line-height: 1.4;
+}
+
+.hand {
+  font-family: var(--font-hand);
+  line-height: 1;
+}

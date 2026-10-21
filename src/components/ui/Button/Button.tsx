@@ -1,0 +1,56 @@
+import type { ButtonHTMLAttributes, ReactNode } from "react";
+import { cn } from "@/utils/cn";
+import styles from "./Button.module.css";
+
+export type ButtonVariant = "primary" | "accent" | "outline" | "outline-light";
+
+type BaseProps = {
+  variant?: ButtonVariant;
+  icon?: ReactNode;
+  className?: string;
+  children: ReactNode;
+};
+
+type LinkButtonProps = BaseProps & {
+  href: string;
+  external?: boolean;
+};
+
+type NativeButtonProps = BaseProps &
+  Omit<ButtonHTMLAttributes<HTMLButtonElement>, keyof BaseProps> & {
+    href?: never;
+  };
+
+export type ButtonProps = LinkButtonProps | NativeButtonProps;
+
+export function Button({ variant = "primary", icon, className, children, ...rest }: ButtonProps) {
+  const classes = cn(styles.button, styles[variant], className);
+  const content = (
+    <>
+      {icon && (
+        <span className={styles.icon} aria-hidden="true">
+          {icon}
+        </span>
+      )}
+      {children}
+    </>
+  );
+
+  if (rest.href !== undefined) {
+    const externalProps = rest.external ? { target: "_blank", rel: "noopener noreferrer" } : {};
+
+    return (
+      <a href={rest.href} className={classes} {...externalProps}>
+        {content}
+      </a>
+    );
+  }
+
+  const { type = "button", ...buttonProps } = rest;
+
+  return (
+    <button type={type} className={classes} {...buttonProps}>
+      {content}
+    </button>
+  );
+}

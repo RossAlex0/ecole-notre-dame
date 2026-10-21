@@ -1,0 +1,59 @@
+/* Variants only set colors; .button consumes them. */
+.button {
+  --_fg: var(--color-white);
+  --_border: transparent;
+  --_bg-hover: var(--_bg);
+  --_fg-hover: var(--_fg);
+
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 24px;
+  border: 2px solid var(--_border);
+  background: var(--_bg);
+  color: var(--_fg);
+  font-family: var(--font-text);
+  font-size: var(--text-md);
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s;
+}
+
+.button:hover {
+  background: var(--_bg-hover);
+  color: var(--_fg-hover);
+}
+
+.icon {
+  display: inline-flex;
+  flex: none;
+}
+
+.primary {
+  --_bg: var(--color-primary);
+  --_bg-hover: var(--color-primary-dark);
+}
+
+.accent {
+  --_bg: var(--color-accent);
+  --_bg-hover: var(--color-accent-dark);
+}
+
+.outline {
+  --_bg: transparent;
+  --_fg: var(--color-primary);
+  --_border: var(--color-primary);
+  --_bg-hover: var(--color-primary);
+  --_fg-hover: var(--color-white);
+}
+
+.outline-light {
+  --_bg: transparent;
+  --_border: var(--color-white);
+  --_bg-hover: var(--color-white);
+  --_fg-hover: var(--color-primary);
+}

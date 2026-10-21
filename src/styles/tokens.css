@@ -9,7 +9,7 @@
   --color-gold: #f2c462;
   --color-tan: #c99a62;
   --color-text: #22252d;
-  --color-text-muted: #5b606c;
+  --color-muted: #5b606c;
   --color-paper: #f4f3ef;
   --color-white: #ffffff;
   --color-border: rgb(34 37 45 / 0.14);
@@ -21,6 +21,16 @@
   --font-mono: var(--font-plex-mono), ui-monospace, Menlo, monospace;
   --font-hand: var(--font-belle-aurore), "Bradley Hand", cursive;
   --font-quote: var(--font-playfair), Georgia, serif;
+
+  /* Type scale */
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-md: 16px;
+  --text-base: 18px;
+  --text-lg: clamp(18px, 1.5vw, 20px);
+  --text-xl: clamp(22px, 2.4vw, 30px);
+  --text-2xl: clamp(28px, 3.4vw, 44px);
+  --text-3xl: clamp(34px, 4.8vw, 60px);
 
   /* Layout */
   --container-max: 1180px;
