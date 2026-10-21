@@ -105,6 +105,14 @@ export const ICONS = {
       </>
     ),
   },
+  arrowLeft: {
+    strokeWidth: 1.6,
+    content: <path d="M19 12H5M11 6l-6 6 6 6" />,
+  },
+  arrowRight: {
+    strokeWidth: 1.6,
+    content: <path d="M5 12h14M13 6l6 6-6 6" />,
+  },
   heart: {
     strokeWidth: 2,
     content: (
