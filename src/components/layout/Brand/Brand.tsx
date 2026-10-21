@@ -1,6 +1,6 @@
-import { Fragment } from "react";
 import type { CSSProperties } from "react";
 import Image from "next/image";
+import { Lines } from "@/components/ui/Lines";
 import { Text } from "@/components/ui/Text";
 import type { TextColor } from "@/components/ui/Text";
 import { SCHOOL } from "@/utils/constants/contact";
@@ -34,12 +34,7 @@ export function Brand({ href, size = "md", color = "primary", className }: Brand
         className={styles.logo}
       />
       <Text as="span" variant="display" size="sm" color={color} className={styles.name}>
-        {SCHOOL.nameLines.map((line, index) => (
-          <Fragment key={line}>
-            {index > 0 && <br />}
-            {line}
-          </Fragment>
-        ))}
+        <Lines lines={SCHOOL.nameLines} />
       </Text>
     </>
   );

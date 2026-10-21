@@ -1,4 +1,4 @@
-import type { ButtonHTMLAttributes, ReactNode } from "react";
+import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from "react";
 import { cn } from "@/utils/cn";
 import { EXTERNAL_LINK_PROPS } from "@/utils/link";
 import styles from "./Button.module.css";
@@ -14,10 +14,11 @@ type BaseProps = {
   children: ReactNode;
 };
 
-type LinkButtonProps = BaseProps & {
-  href: string;
-  external?: boolean;
-};
+type LinkButtonProps = BaseProps &
+  Omit<AnchorHTMLAttributes<HTMLAnchorElement>, keyof BaseProps | "href" | "target" | "rel"> & {
+    href: string;
+    external?: boolean;
+  };
 
 type NativeButtonProps = BaseProps &
   Omit<ButtonHTMLAttributes<HTMLButtonElement>, keyof BaseProps> & {
@@ -48,10 +49,10 @@ export function Button({
   );
 
   if (rest.href !== undefined) {
-    const externalProps = rest.external ? EXTERNAL_LINK_PROPS : {};
+    const { external, ...anchorProps } = rest;
 
     return (
-      <a href={rest.href} className={classes} {...externalProps}>
+      <a {...anchorProps} className={classes} {...(external ? EXTERNAL_LINK_PROPS : {})}>
         {content}
       </a>
     );

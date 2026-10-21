@@ -1,0 +1,21 @@
+.frame {
+  position: relative;
+  margin: 0 var(--frame-offset) var(--frame-offset) 0;
+}
+
+.backdrop {
+  position: absolute;
+  inset: var(--frame-offset) calc(var(--frame-offset) * -1) calc(var(--frame-offset) * -1)
+    var(--frame-offset);
+  background: var(--color-tan);
+}
+
+.media {
+  position: relative;
+  aspect-ratio: var(--_ratio);
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
+}

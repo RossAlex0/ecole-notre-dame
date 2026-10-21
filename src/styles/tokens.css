@@ -41,6 +41,7 @@
   --nav-height: 98px;
   --logo-md: 64px;
   --logo-lg: 124px;
+  --frame-offset: 26px;
 
   /* Focus */
   --focus-ring: 3px solid var(--color-accent);

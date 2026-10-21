@@ -56,6 +56,18 @@ describe("Button", () => {
       expect(link).toHaveAttribute("rel", "noopener noreferrer");
     });
 
+    it("forwards anchor attributes such as aria-label to the link", () => {
+      render(
+        <Button href="#balma" aria-label="2 minutes pour nous connaître : voir le film du collège">
+          2 minutes pour nous connaître
+        </Button>,
+      );
+
+      expect(
+        screen.getByRole("link", { name: "2 minutes pour nous connaître : voir le film du collège" }),
+      ).toHaveAttribute("href", "#balma");
+    });
+
     it("renders an icon hidden from assistive technologies", () => {
       render(
         <Button href="#film" icon={<svg data-testid="play" />}>
