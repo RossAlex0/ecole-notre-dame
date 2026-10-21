@@ -7,7 +7,7 @@ import { DOCUMENTS, SOCIAL_LINKS } from "./links";
 import { CONTACT_LINK, DONATE_LINK, HOME_HREF, NAV_LINKS, SECTION_IDS } from "./navigation";
 
 const publicPath = (src: string) => path.join(process.cwd(), "public", src);
-const sectionAnchors = Object.values(SECTION_IDS).map((id) => `#${id}`);
+const sectionAnchors = Object.values(SECTION_IDS).map((id) => `/#${id}`);
 
 describe("constants", () => {
   describe("defaults", () => {
@@ -16,7 +16,7 @@ describe("constants", () => {
     });
 
     it("points the home link to the top anchor", () => {
-      expect(HOME_HREF).toBe("#top");
+      expect(HOME_HREF).toBe("/#top");
     });
   });
 

@@ -5,9 +5,12 @@ export type ContactPerson = {
   email: string;
 };
 
+const SCHOOL_ADDRESS = { street: "4 rue de la Plaine", postalCode: "31590", city: "Verfeil", country: "FR" } as const;
+
 export const SCHOOL = {
   nameLines: ["Collège", "Notre-Dame de l'Aurore"],
-  address: "4 rue de la Plaine, 31590 Verfeil",
+  postalAddress: SCHOOL_ADDRESS,
+  address: `${SCHOOL_ADDRESS.street}, ${SCHOOL_ADDRESS.postalCode} ${SCHOOL_ADDRESS.city}`,
   addressNote: "jusqu'en juin 2027, puis Balma",
   phone: "06 75 08 01 46",
   email: "nddelaurore@gmail.com",

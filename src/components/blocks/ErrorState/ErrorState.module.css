@@ -1,0 +1,12 @@
+.error {
+  display: grid;
+  gap: 20px;
+  min-height: 50vh;
+  align-content: center;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}

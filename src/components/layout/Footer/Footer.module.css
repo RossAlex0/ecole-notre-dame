@@ -130,3 +130,33 @@ a.coord:hover {
     flex: 1;
   }
 }
+
+/* Bottom bar under the white separator: legal links left, credits right. */
+.bottom {
+  display: flex;
+  flex-basis: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px 32px;
+  padding-top: 20px;
+  border-top: 1px solid rgb(255 255 255 / 0.2);
+  color: var(--color-on-dark-muted);
+  font-size: var(--text-xs);
+}
+
+.inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+}
+
+.bottom a {
+  color: var(--color-on-dark-muted);
+  text-decoration: none;
+}
+
+.bottom a:hover {
+  color: var(--color-on-dark);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

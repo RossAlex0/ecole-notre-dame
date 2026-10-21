@@ -1,4 +1,4 @@
-import { toAnchor } from "@/utils/link";
+import { toSectionHref } from "@/utils/link";
 
 export const SECTION_IDS = {
   top: "top",
@@ -15,14 +15,25 @@ export type NavLink = {
   href: string;
 };
 
-export const HOME_HREF = toAnchor(SECTION_IDS.top);
+export const ROUTES = {
+  home: "/",
+  legalNotice: "/mentions-legales",
+  privacy: "/politique-de-confidentialite",
+} as const;
 
-export const NAV_LINKS: readonly NavLink[] = [
-  { label: "Le collège", href: toAnchor(SECTION_IDS.college) },
-  { label: "Balma 2027", href: toAnchor(SECTION_IDS.balma) },
-  { label: "Inscriptions", href: toAnchor(SECTION_IDS.inscriptions) },
+export const HOME_HREF = toSectionHref(SECTION_IDS.top);
+
+export const LEGAL_LINKS: readonly NavLink[] = [
+  { label: "Mentions légales", href: ROUTES.legalNotice },
+  { label: "Politique de confidentialité", href: ROUTES.privacy },
 ];
 
-export const DONATE_LINK: NavLink = { label: "Faire un don", href: toAnchor(SECTION_IDS.support) };
+export const NAV_LINKS: readonly NavLink[] = [
+  { label: "Le collège", href: toSectionHref(SECTION_IDS.college) },
+  { label: "Balma 2027", href: toSectionHref(SECTION_IDS.balma) },
+  { label: "Inscriptions", href: toSectionHref(SECTION_IDS.inscriptions) },
+];
 
-export const CONTACT_LINK: NavLink = { label: "Contact", href: toAnchor(SECTION_IDS.contact) };
+export const DONATE_LINK: NavLink = { label: "Faire un don", href: toSectionHref(SECTION_IDS.support) };
+
+export const CONTACT_LINK: NavLink = { label: "Contact", href: toSectionHref(SECTION_IDS.contact) };

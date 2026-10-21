@@ -31,3 +31,14 @@ export const MAIL_LINKS = {
 export const DOCUMENTS = {
   rib: "/documents/rib-aglae.pdf",
 } as const;
+
+export type Credit = {
+  prefix: string;
+  name: string;
+  href: string;
+};
+
+export const CREDITS: readonly Credit[] = [
+  { prefix: "Développé par", name: "Alex Rossignol", href: "https://alex-rossignol.fr" },
+  { prefix: "Design par", name: "Marlene Ayrault", href: "https://www.ayraultmarlene.fr/" },
+];
