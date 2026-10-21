@@ -1,0 +1,36 @@
+name: Audit
+
+on:
+  workflow_dispatch:
+    inputs:
+      scope:
+        description: Dependencies to audit
+        type: choice
+        options: [production, all]
+        default: production
+      level:
+        description: Minimum severity that fails the job
+        type: choice
+        options: [low, moderate, high, critical]
+        default: high
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    name: npm audit (${{ inputs.scope }}, ${{ inputs.level }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup project
+        uses: ./.github/actions/setup
+        with:
+          install: "false"
+
+      - name: Audit
+        run: npm audit --audit-level=${{ inputs.level }} ${{ inputs.scope == 'production' && '--omit=dev' || '' }}

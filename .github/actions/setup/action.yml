@@ -1,0 +1,22 @@
+name: Setup project
+description: Setup Node from .nvmrc and optionally install dependencies
+
+inputs:
+  install:
+    description: Run npm ci after setting up Node
+    required: false
+    default: "true"
+
+runs:
+  using: composite
+  steps:
+    - name: Setup Node
+      uses: actions/setup-node@v7
+      with:
+        node-version-file: .nvmrc
+        cache: npm
+
+    - name: Install dependencies
+      if: inputs.install == 'true'
+      shell: bash
+      run: npm ci
