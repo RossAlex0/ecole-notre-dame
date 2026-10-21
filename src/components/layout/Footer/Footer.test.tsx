@@ -3,6 +3,7 @@ import { Footer } from "./Footer";
 import { FOOTER_CONTENT } from "@/content/footer";
 import { SCHOOL, SCHOOL_NAME } from "@/utils/constants/contact";
 import { SOCIAL_LINKS } from "@/utils/constants/links";
+import { LEGAL_LINKS } from "@/utils/constants/navigation";
 import { toMailHref, toTelHref } from "@/utils/link";
 
 describe("Footer", () => {
@@ -65,6 +66,7 @@ describe("Footer", () => {
         ...SOCIAL_LINKS.map((link) => link.href),
         toTelHref(SCHOOL.phone),
         toMailHref(SCHOOL.email),
+        ...LEGAL_LINKS.map((link) => link.href),
       ];
       const rendered = screen.getAllByRole("link").map((link) => link.getAttribute("href"));
 

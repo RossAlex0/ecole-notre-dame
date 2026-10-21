@@ -1,8 +1,9 @@
 // Opens external pages in a new tab without giving them access to window.opener.
 export const EXTERNAL_LINK_PROPS = { target: "_blank", rel: "noopener noreferrer" } as const;
 
-export function toAnchor(id: string): string {
-  return `#${id}`;
+// Link to a section of the home page; works from any route (e.g. legal pages).
+export function toSectionHref(id: string): string {
+  return `/#${id}`;
 }
 
 // Converts a French display number ("06 75 08 01 46") to an international tel: link.

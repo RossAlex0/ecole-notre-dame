@@ -5,6 +5,7 @@ import { Text } from "@/components/ui/Text";
 import { FOOTER_CONTENT } from "@/content/footer";
 import { SCHOOL } from "@/utils/constants/contact";
 import { SOCIAL_LINKS } from "@/utils/constants/links";
+import { LEGAL_LINKS } from "@/utils/constants/navigation";
 import { EXTERNAL_LINK_PROPS, toMailHref, toTelHref } from "@/utils/link";
 import styles from "./Footer.module.css";
 
@@ -52,6 +53,14 @@ export function Footer() {
             {SCHOOL.email}
           </a>
         </address>
+
+        <nav aria-label="Informations légales" className={styles.legal}>
+          {LEGAL_LINKS.map((link) => (
+            <a key={link.href} href={link.href}>
+              {link.label}
+            </a>
+          ))}
+        </nav>
       </Container>
     </footer>
   );

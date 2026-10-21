@@ -1,7 +1,7 @@
 import type { HeroContent } from "@/types/content";
 import { IMAGES } from "@/utils/constants/images";
 import { SECTION_IDS } from "@/utils/constants/navigation";
-import { toAnchor } from "@/utils/link";
+import { toSectionHref } from "@/utils/link";
 
 export const HERO_CONTENT: HeroContent = {
   motto: "Candor lucis aeternae",
@@ -21,11 +21,11 @@ export const HERO_CONTENT: HeroContent = {
   filmCta: {
     label: "2 minutes pour nous connaître",
     ariaLabel: "2 minutes pour nous connaître : voir le film du collège",
-    href: toAnchor(SECTION_IDS.balma),
+    href: toSectionHref(SECTION_IDS.balma),
   },
   registrationCta: {
     label: "Inscriptions 2027",
-    href: toAnchor(SECTION_IDS.inscriptions),
+    href: toSectionHref(SECTION_IDS.inscriptions),
   },
   picture: {
     image: IMAGES.hero,

@@ -1,0 +1,17 @@
+.legal {
+  display: grid;
+  gap: 12px;
+  max-width: 72ch;
+}
+
+.section {
+  display: grid;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.section a {
+  color: var(--color-primary);
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}

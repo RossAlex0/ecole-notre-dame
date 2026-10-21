@@ -1,0 +1,18 @@
+/* Hidden off-screen until focused with the keyboard. */
+.skipLink {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 100;
+  padding: 12px 18px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-weight: 700;
+  text-decoration: none;
+  transform: translateY(-200%);
+  transition: transform 0.2s;
+}
+
+.skipLink:focus-visible {
+  transform: none;
+}

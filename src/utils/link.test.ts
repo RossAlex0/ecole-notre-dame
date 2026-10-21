@@ -1,21 +1,21 @@
-import { toAnchor, toMailHref, toTelHref } from "./link";
+import { toSectionHref, toMailHref, toTelHref } from "./link";
 
-describe("toAnchor", () => {
+describe("toSectionHref", () => {
   describe("defaults", () => {
-    it("prefixes the id with a hash", () => {
-      expect(toAnchor("contact")).toBe("#contact");
+    it("prefixes the id with the home path and a hash", () => {
+      expect(toSectionHref("contact")).toBe("/#contact");
     });
   });
 
   describe("usage", () => {
     it("builds the donate section anchor", () => {
-      expect(toAnchor("soutenir")).toBe("#soutenir");
+      expect(toSectionHref("soutenir")).toBe("/#soutenir");
     });
   });
 
   describe("edge cases", () => {
-    it("returns a lone hash for an empty id", () => {
-      expect(toAnchor("")).toBe("#");
+    it("points to the home page top for an empty id", () => {
+      expect(toSectionHref("")).toBe("/#");
     });
   });
 });

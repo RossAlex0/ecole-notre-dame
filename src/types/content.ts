@@ -122,3 +122,22 @@ export type PillarsContent = {
   highlight: string;
   items: readonly Pillar[];
 };
+
+export type LegalSection = {
+  title: string;
+  paragraphs: readonly (readonly TextSegment[])[];
+};
+
+export type LegalPageContent = {
+  title: string;
+  description: string;
+  updatedAt: string;
+  sections: readonly LegalSection[];
+};
+
+export type ErrorContent = {
+  eyebrow: string;
+  title: string;
+  highlight: string;
+  text: string;
+};
