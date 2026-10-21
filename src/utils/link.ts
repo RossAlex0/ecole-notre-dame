@@ -1,3 +1,6 @@
+// Opens external pages in a new tab without giving them access to window.opener.
+export const EXTERNAL_LINK_PROPS = { target: "_blank", rel: "noopener noreferrer" } as const;
+
 export function toAnchor(id: string): string {
   return `#${id}`;
 }

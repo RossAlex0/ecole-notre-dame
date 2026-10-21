@@ -4,7 +4,17 @@ import styles from "./Text.module.css";
 
 export type TextVariant = "display" | "heading" | "body" | "mono" | "hand";
 export type TextSize = "xs" | "sm" | "md" | "base" | "lg" | "xl" | "2xl" | "3xl";
-export type TextColor = "text" | "muted" | "primary" | "accent" | "gold" | "white";
+// Each value maps to a --color-* token.
+export type TextColor =
+  | "text"
+  | "muted"
+  | "primary"
+  | "accent"
+  | "accent-dark"
+  | "gold"
+  | "white"
+  | "on-dark"
+  | "on-dark-muted";
 export type TextElement = "h1" | "h2" | "h3" | "h4" | "p" | "span" | "strong" | "blockquote";
 
 const VARIANT_DEFAULTS: Record<TextVariant, { size: TextSize; color: TextColor }> = {

@@ -1,5 +1,6 @@
 import type { ButtonHTMLAttributes, ReactNode } from "react";
 import { cn } from "@/utils/cn";
+import { EXTERNAL_LINK_PROPS } from "@/utils/link";
 import styles from "./Button.module.css";
 
 export type ButtonVariant = "primary" | "accent" | "outline" | "outline-light";
@@ -47,7 +48,7 @@ export function Button({
   );
 
   if (rest.href !== undefined) {
-    const externalProps = rest.external ? { target: "_blank", rel: "noopener noreferrer" } : {};
+    const externalProps = rest.external ? EXTERNAL_LINK_PROPS : {};
 
     return (
       <a href={rest.href} className={classes} {...externalProps}>

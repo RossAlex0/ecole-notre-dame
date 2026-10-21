@@ -12,6 +12,8 @@
   --color-muted: #5b606c;
   --color-paper: #f4f3ef;
   --color-white: #ffffff;
+  --color-on-dark: #e8e9ec;
+  --color-on-dark-muted: #a9adb7;
   --color-border: rgb(34 37 45 / 0.14);
   --color-grid-line: rgb(31 51 196 / 0.07);
 
@@ -49,6 +51,7 @@
 
 /* Breakpoints (media queries cannot read custom properties):
    - 960px: desktop navigation ↔ mobile menu
+   - 560px: footer social band stacks
    - 460px: small phones */
 @media (max-width: 460px) {
   :root {
