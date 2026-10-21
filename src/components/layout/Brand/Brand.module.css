@@ -1,0 +1,17 @@
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.logo {
+  flex: none;
+  width: var(--_logo-width);
+  height: auto;
+}
+
+.name {
+  font-stretch: 115%;
+  line-height: 1.15;
+}
