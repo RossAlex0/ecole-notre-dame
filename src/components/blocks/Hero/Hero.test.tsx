@@ -39,6 +39,20 @@ describe("Hero", () => {
       expect(screen.getByRole("link", { name: filmCta.ariaLabel })).toHaveAttribute("href", filmCta.href);
       expect(screen.getByRole("link", { name: registrationCta.label })).toHaveClass("outline");
     });
+
+    it("welcomes visitors on the film button", () => {
+      render(<Hero content={HERO_CONTENT} />);
+
+      expect(screen.getByRole("link", { name: /^Bienvenue à l’Aurore/ })).toHaveTextContent("Bienvenue à l’Aurore");
+    });
+
+    it("plays the entrance animation on the copy and the photo", () => {
+      const { container } = render(<Hero content={HERO_CONTENT} />);
+
+      expect(screen.getByRole("heading", { level: 1 })).toHaveClass("enter");
+      expect(container.querySelectorAll("p.body.enter")).toHaveLength(HERO_CONTENT.paragraphs.length);
+      expect(container.querySelector(".frame")).toHaveClass("entrance");
+    });
   });
 
   describe("edge cases", () => {

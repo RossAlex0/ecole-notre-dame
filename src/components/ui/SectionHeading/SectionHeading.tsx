@@ -1,6 +1,7 @@
 import { Text } from "@/components/ui/Text";
 import type { TextColor, TextSize } from "@/components/ui/Text";
 import { cn } from "@/utils/cn";
+import { REVEAL_PROPS } from "@/utils/constants/reveal";
 import styles from "./SectionHeading.module.css";
 
 export type SectionHeadingTone = "light" | "dark";
@@ -38,7 +39,7 @@ export function SectionHeading({
   const size = LEVEL_SIZES[level];
 
   return (
-    <div className={cn(styles.heading, styles[align], className)}>
+    <div className={cn(styles.heading, styles[align], className)} {...REVEAL_PROPS}>
       <Text as={`h${level}`} variant="display" size={size} color={colors.title}>
         {title}
         {highlight && (

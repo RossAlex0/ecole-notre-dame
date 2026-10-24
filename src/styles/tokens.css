@@ -38,6 +38,8 @@
   --container-max: 1180px;
   --gutter: clamp(16px, 5vw, 72px);
   --section-padding: clamp(56px, 7vw, 96px);
+  /* Top padding of the opening section, so the hero buttons fit on a laptop screen. */
+  --section-padding-compact: clamp(24px, 3vw, 40px);
   --nav-height: 98px;
   --logo-md: 64px;
   --logo-lg: 124px;
@@ -46,6 +48,10 @@
   /* Focus */
   --focus-ring: 3px solid var(--color-accent);
   --focus-offset: 3px;
+
+  /* Motion (mockup entrance and scroll reveal) */
+  --ease-out-soft: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --reveal-distance: 26px;
 
   color-scheme: light;
 }

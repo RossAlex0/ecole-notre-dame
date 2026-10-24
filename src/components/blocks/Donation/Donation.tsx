@@ -6,6 +6,7 @@ import { CollectionChart } from "./CollectionChart";
 import { PaymentOptions } from "./PaymentOptions";
 import { StepTitle } from "./StepTitle";
 import { TaxSimulator } from "./TaxSimulator";
+import { REVEAL_STAGGER_PROPS } from "@/utils/constants/reveal";
 import styles from "./Donation.module.css";
 
 export type DonationProps = {
@@ -28,7 +29,7 @@ export function Donation({ content }: DonationProps) {
         <CollectionChart {...content.campaign} className={styles.chart} />
       </div>
 
-      <div className={styles.grid}>
+      <div className={styles.grid} {...REVEAL_STAGGER_PROPS}>
         <TaxSimulator simulator={content.simulator} />
 
         <div className={styles.rightColumn}>

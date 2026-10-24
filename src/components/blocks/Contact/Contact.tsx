@@ -4,6 +4,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Text } from "@/components/ui/Text";
 import type { ContactContent } from "@/types/content";
 import { toMailHref, toTelHref } from "@/utils/link";
+import { REVEAL_STAGGER_PROPS } from "@/utils/constants/reveal";
 import styles from "./Contact.module.css";
 
 export type ContactProps = {
@@ -15,7 +16,7 @@ export function Contact({ content }: ContactProps) {
     <>
       <SectionHeading title={content.title} highlight={content.highlight} className={styles.heading} />
 
-      <ul className={styles.cards}>
+      <ul className={styles.cards} {...REVEAL_STAGGER_PROPS}>
         {content.cards.map(({ person, picture }) => (
           <li key={person.email} className={styles.card}>
             <Image

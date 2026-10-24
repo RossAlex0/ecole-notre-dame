@@ -2,6 +2,7 @@ import Image from "next/image";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Text } from "@/components/ui/Text";
 import type { PillarsContent } from "@/types/content";
+import { REVEAL_STAGGER_PROPS } from "@/utils/constants/reveal";
 import styles from "./Pillars.module.css";
 
 export type PillarsProps = {
@@ -13,7 +14,7 @@ export function Pillars({ content }: PillarsProps) {
     <div className={styles.pillars}>
       <SectionHeading title={content.title} highlight={content.highlight} align="center" />
 
-      <ul className={styles.grid}>
+      <ul className={styles.grid} {...REVEAL_STAGGER_PROPS}>
         {content.items.map(({ title, text, picture }) => (
           <li key={title} className={styles.card}>
             <div className={styles.media}>

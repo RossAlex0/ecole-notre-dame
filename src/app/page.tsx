@@ -5,6 +5,8 @@ import { Hero } from "@/components/blocks/Hero";
 import { Inscriptions } from "@/components/blocks/Inscriptions";
 import { Pillars } from "@/components/blocks/Pillars";
 import { Testimonials } from "@/components/blocks/Testimonials";
+import { ScrollReveal } from "@/components/layout/ScrollReveal";
+import { ReplayOnAnchorClick } from "@/components/ui/ReplayOnAnchorClick";
 import { Section } from "@/components/ui/Section";
 import { BALMA_CONTENT } from "@/content/balma";
 import { CONTACT_CONTENT } from "@/content/contact";
@@ -18,8 +20,10 @@ import { SECTION_IDS } from "@/utils/constants/navigation";
 export default function Home() {
   return (
     <>
-      <Section id={SECTION_IDS.college} background="paper">
-        <Hero content={HERO_CONTENT} />
+      <Section id={SECTION_IDS.college} background="paper" compactTop>
+        <ReplayOnAnchorClick hash={SECTION_IDS.college}>
+          <Hero content={HERO_CONTENT} />
+        </ReplayOnAnchorClick>
         <Pillars content={PILLARS_CONTENT} />
       </Section>
       <Section id={SECTION_IDS.balma} background="primary">
@@ -37,6 +41,8 @@ export default function Home() {
       <Section id={SECTION_IDS.contact}>
         <Contact content={CONTACT_CONTENT} />
       </Section>
+      {/* Rendered after the sections so it hydrates with them before touching their DOM. */}
+      <ScrollReveal />
     </>
   );
 }

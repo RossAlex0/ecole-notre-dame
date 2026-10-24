@@ -3,6 +3,10 @@
   scroll-margin-top: var(--nav-height);
 }
 
+.compactTop {
+  padding-top: var(--section-padding-compact);
+}
+
 .white {
   background: var(--color-white);
 }
