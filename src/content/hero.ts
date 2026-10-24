@@ -19,8 +19,8 @@ export const HERO_CONTENT: HeroContent = {
     },
   ],
   filmCta: {
-    label: "2 minutes pour nous connaître",
-    ariaLabel: "2 minutes pour nous connaître : voir le film du collège",
+    label: "Bienvenue à l’Aurore",
+    ariaLabel: "Bienvenue à l’Aurore : voir le film du collège",
     href: toSectionHref(SECTION_IDS.balma),
   },
   registrationCta: {
