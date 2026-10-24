@@ -3,6 +3,7 @@ import type { BalmaContent } from "@/types/content";
 import { BalmaDrawing } from "./BalmaDrawing";
 import { KeyFigureItem } from "./KeyFigureItem";
 import { VideoTeaser } from "./VideoTeaser";
+import { REVEAL_STAGGER_PROPS } from "@/utils/constants/reveal";
 import styles from "./Balma.module.css";
 
 export type BalmaProps = {
@@ -25,7 +26,7 @@ export function Balma({ content }: BalmaProps) {
 
       <div className={styles.grid}>
         <VideoTeaser video={content.video} />
-        <ul className={styles.figures}>
+        <ul className={styles.figures} {...REVEAL_STAGGER_PROPS}>
           {content.keyFigures.map((figure) => (
             <KeyFigureItem key={figure.label} figure={figure} />
           ))}

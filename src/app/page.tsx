@@ -5,6 +5,7 @@ import { Hero } from "@/components/blocks/Hero";
 import { Inscriptions } from "@/components/blocks/Inscriptions";
 import { Pillars } from "@/components/blocks/Pillars";
 import { Testimonials } from "@/components/blocks/Testimonials";
+import { ScrollReveal } from "@/components/layout/ScrollReveal";
 import { ReplayOnAnchorClick } from "@/components/ui/ReplayOnAnchorClick";
 import { Section } from "@/components/ui/Section";
 import { BALMA_CONTENT } from "@/content/balma";
@@ -40,6 +41,8 @@ export default function Home() {
       <Section id={SECTION_IDS.contact}>
         <Contact content={CONTACT_CONTENT} />
       </Section>
+      {/* Rendered after the sections so it hydrates with them before touching their DOM. */}
+      <ScrollReveal />
     </>
   );
 }

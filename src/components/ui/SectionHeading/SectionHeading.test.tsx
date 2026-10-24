@@ -11,6 +11,12 @@ describe("SectionHeading", () => {
       expect(heading.querySelector("span")).toBeNull();
       expect(container.querySelector("p")).toBeNull();
     });
+
+    it("marks the heading for the scroll reveal", () => {
+      const { container } = render(<SectionHeading title="Titre" />);
+
+      expect(container.firstElementChild).toHaveAttribute("data-reveal");
+    });
   });
 
   describe("usage", () => {

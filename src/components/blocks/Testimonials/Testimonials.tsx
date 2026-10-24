@@ -7,6 +7,7 @@ import { Text } from "@/components/ui/Text";
 import { useCarousel } from "@/hooks/useCarousel";
 import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 import type { TestimonialsContent } from "@/types/content";
+import { REVEAL_PROPS } from "@/utils/constants/reveal";
 import styles from "./Testimonials.module.css";
 
 const AUTOPLAY_MS = 7000;
@@ -33,6 +34,7 @@ export function Testimonials({ content }: TestimonialsProps) {
 
       <div
         className={styles.carousel}
+        {...REVEAL_PROPS}
         role="region"
         aria-roledescription="carrousel"
         aria-label="Témoignages"

@@ -68,3 +68,20 @@ a {
     transition: none !important;
   }
 }
+
+/* Scroll reveal (see ScrollReveal): uses `translate` and an animation so it never
+   overrides the hover transform or transition of the revealed element. */
+[data-reveal-state="pending"] {
+  opacity: 0;
+}
+
+[data-reveal-state="shown"] {
+  animation: reveal-in 0.8s var(--ease-out-soft) var(--reveal-delay, 0s) both;
+}
+
+@keyframes reveal-in {
+  from {
+    opacity: 0;
+    translate: 0 var(--reveal-distance);
+  }
+}
