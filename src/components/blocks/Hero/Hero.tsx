@@ -6,6 +6,7 @@ import { Lines } from "@/components/ui/Lines";
 import { RichParagraph } from "@/components/ui/RichParagraph";
 import { Text } from "@/components/ui/Text";
 import type { HeroContent } from "@/types/content";
+import { cn } from "@/utils/cn";
 import styles from "./Hero.module.css";
 
 export type HeroProps = {
@@ -18,19 +19,25 @@ export function Hero({ content }: HeroProps) {
   return (
     <div className={styles.hero}>
       <div className={styles.copy}>
-        <Eyebrow className={styles.motto}>{motto}</Eyebrow>
+        <Eyebrow className={cn(styles.enter, styles.motto)}>{motto}</Eyebrow>
 
-        <Text as="h1" variant="display" className={styles.title}>
+        <Text as="h1" variant="display" className={cn(styles.enter, styles.title)}>
           <Lines lines={titleLines} />
         </Text>
 
         <div className={styles.paragraphs}>
           {paragraphs.map((paragraph) => (
-            <RichParagraph key={paragraph.text} paragraph={paragraph} size="md" color="muted" />
+            <RichParagraph
+              key={paragraph.text}
+              paragraph={paragraph}
+              size="md"
+              color="muted"
+              className={styles.enter}
+            />
           ))}
         </div>
 
-        <div className={styles.ctas}>
+        <div className={cn(styles.enter, styles.ctas)}>
           <Button
             href={filmCta.href}
             size="sm"
@@ -54,6 +61,7 @@ export function Hero({ content }: HeroProps) {
         ratio="4 / 4.4"
         sizes="(max-width: 880px) 100vw, 480px"
         priority
+        entrance
         className={styles.photo}
       />
     </div>

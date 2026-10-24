@@ -5,20 +5,48 @@
   gap: clamp(40px, 6vw, 88px);
 }
 
+/* Mockup entrance: copy rises in one line after the other on page load. */
+.enter {
+  animation: hero-in 0.9s var(--ease-out-soft) var(--_delay, 0s) both;
+}
+
+@keyframes hero-in {
+  from {
+    opacity: 0;
+    translate: 0 var(--reveal-distance);
+  }
+}
+
 .motto {
-  margin-bottom: 20px;
+  --_delay: 0.1s;
+
+  margin-bottom: 14px;
 }
 
 .title {
+  --_delay: 0.25s;
+
   font-stretch: 112%;
   line-height: 0.96;
 }
 
 .paragraphs {
   display: grid;
-  gap: 14px;
+  gap: 10px;
   max-width: 60ch;
-  margin-top: 20px;
+  margin-top: 16px;
+}
+
+.paragraphs > :nth-child(1) {
+  --_delay: 0.5s;
+}
+
+.paragraphs > :nth-child(2) {
+  --_delay: 0.62s;
+}
+
+.paragraphs > :nth-child(3) {
+  --_delay: 0.74s;
 }
 
 .paragraphs strong {
@@ -28,8 +56,10 @@
 .ctas {
   display: flex;
   flex-wrap: wrap;
+  --_delay: 0.9s;
+
   gap: 10px;
-  margin-top: 24px;
+  margin-top: 20px;
 }
 
 /* Orange round play badge inside the film button. */

@@ -13,19 +13,20 @@ describe("Section", () => {
       expect(section).toHaveClass("section", "white");
       expect(screen.getByText("Content")).toHaveClass("container");
       expect(section).not.toHaveAttribute("id");
+      expect(section).not.toHaveClass("compactTop");
     });
   });
 
   describe("usage", () => {
     it("renders the hero section on graph paper with its anchor id", () => {
       const { container } = render(
-        <Section id="college" background="paper">
+        <Section id="college" background="paper" compactTop>
           Hero
         </Section>,
       );
 
       expect(getSection(container)).toHaveAttribute("id", "college");
-      expect(getSection(container)).toHaveClass("paper");
+      expect(getSection(container)).toHaveClass("paper", "compactTop");
     });
 
     it.each<SectionBackground>(["white", "paper", "primary"])("applies the %s background", (background) => {

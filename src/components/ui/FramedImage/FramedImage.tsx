@@ -11,15 +11,24 @@ export type FramedImageProps = {
   // next/image sizes hint for responsive loading.
   sizes: string;
   priority?: boolean;
+  // Plays the mockup entrance: photo rises in, then the tan block slides into place.
+  entrance?: boolean;
   className?: string;
 };
 
 // Photo with an offset tan block behind it, as in the mockup.
-export function FramedImage({ picture, ratio, sizes, priority = false, className }: FramedImageProps) {
+export function FramedImage({
+  picture,
+  ratio,
+  sizes,
+  priority = false,
+  entrance = false,
+  className,
+}: FramedImageProps) {
   const style = { "--_ratio": ratio } as CSSProperties;
 
   return (
-    <div className={cn(styles.frame, className)} style={style}>
+    <div className={cn(styles.frame, entrance && styles.entrance, className)} style={style}>
       <div className={styles.backdrop} aria-hidden="true" />
       <div className={styles.media}>
         <Image

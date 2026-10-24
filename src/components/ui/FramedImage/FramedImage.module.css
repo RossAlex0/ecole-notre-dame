@@ -19,3 +19,25 @@
 .image {
   object-fit: cover;
 }
+
+.entrance .media {
+  animation: photo-in 1s var(--ease-out-soft) 0.4s both;
+}
+
+.entrance .backdrop {
+  animation: frame-in 0.9s var(--ease-out-soft) 0.75s both;
+}
+
+@keyframes photo-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.97);
+  }
+}
+
+@keyframes frame-in {
+  from {
+    opacity: 0;
+    transform: translate(-22px, -22px);
+  }
+}

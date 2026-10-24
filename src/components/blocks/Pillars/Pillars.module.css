@@ -17,7 +17,7 @@
   border: 1px solid var(--color-border);
   background: var(--color-white);
   transition:
-    transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 0.45s var(--ease-out-soft),
     box-shadow 0.45s;
 }
 
