@@ -1,5 +1,6 @@
 import type { HeroContent } from "@/types/content";
 import { IMAGES } from "@/utils/constants/images";
+import { WELCOME_FILM_URL } from "@/utils/constants/links";
 import { SECTION_IDS } from "@/utils/constants/navigation";
 import { toSectionHref } from "@/utils/link";
 
@@ -20,8 +21,9 @@ export const HERO_CONTENT: HeroContent = {
   ],
   filmCta: {
     label: "Bienvenue à l’Aurore",
-    ariaLabel: "Bienvenue à l’Aurore : voir le film du collège",
-    href: toSectionHref(SECTION_IDS.balma),
+    ariaLabel: "Bienvenue à l’Aurore : voir le film du collège sur YouTube (nouvel onglet)",
+    href: WELCOME_FILM_URL,
+    external: true,
   },
   registrationCta: {
     label: "Inscriptions 2027",

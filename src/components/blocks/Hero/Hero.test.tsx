@@ -43,7 +43,10 @@ describe("Hero", () => {
     it("welcomes visitors on the film button", () => {
       render(<Hero content={HERO_CONTENT} />);
 
-      expect(screen.getByRole("link", { name: /^Bienvenue à l’Aurore/ })).toHaveTextContent("Bienvenue à l’Aurore");
+      const link = screen.getByRole("link", { name: /^Bienvenue à l’Aurore/ });
+      expect(link).toHaveTextContent("Bienvenue à l’Aurore");
+      expect(link).toHaveAttribute("href", "https://www.youtube.com/watch?v=s10p6rdBQQc");
+      expect(link).toHaveAttribute("target", "_blank");
     });
 
     it("plays the entrance animation on the copy and the photo", () => {

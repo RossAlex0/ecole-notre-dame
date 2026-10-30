@@ -40,6 +40,7 @@ export function Hero({ content }: HeroProps) {
         <div className={cn(styles.enter, styles.ctas)}>
           <Button
             href={filmCta.href}
+            external={filmCta.external}
             size="sm"
             aria-label={filmCta.ariaLabel}
             icon={

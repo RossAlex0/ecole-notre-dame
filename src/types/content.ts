@@ -17,6 +17,8 @@ export type Picture = {
 
 export type CallToAction = NavLink & {
   ariaLabel?: string;
+  // Opens in a new tab (external site).
+  external?: boolean;
 };
 
 export type HeroContent = {
