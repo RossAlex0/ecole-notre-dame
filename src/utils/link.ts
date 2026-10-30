@@ -6,6 +6,11 @@ export function toSectionHref(id: string): string {
   return `/#${id}`;
 }
 
+// Privacy-enhanced YouTube player, started right away since it is only loaded on a click.
+export function toYouTubeEmbedUrl(videoId: string): string {
+  return `https://www.youtube-nocookie.com/embed/${encodeURIComponent(videoId)}?autoplay=1&rel=0`;
+}
+
 // Converts a French display number ("06 75 08 01 46") to an international tel: link.
 export function toTelHref(phone: string): string {
   const digits = phone.replace(/\D/g, "");

@@ -15,19 +15,21 @@ describe("Balma", () => {
       expect(screen.getByText(BALMA_CONTENT.lede)).toBeInTheDocument();
     });
 
-    it("hides the video placeholder message until play is pressed", () => {
-      render(<Balma content={BALMA_CONTENT} />);
+    it("does not load the YouTube player before play is pressed", () => {
+      const { container } = render(<Balma content={BALMA_CONTENT} />);
 
-      expect(screen.getByRole("status", { hidden: true })).not.toBeVisible();
+      expect(container.querySelector("iframe")).toBeNull();
     });
   });
 
   describe("usage", () => {
-    it("shows the placeholder message when the film button is pressed", () => {
+    it("replaces the still image with the privacy-enhanced YouTube film on play", () => {
       render(<Balma content={BALMA_CONTENT} />);
       fireEvent.click(screen.getByRole("button", { name: BALMA_CONTENT.video.playLabel }));
 
-      expect(screen.getByRole("status")).toHaveTextContent(BALMA_CONTENT.video.placeholder);
+      const player = screen.getByTitle(BALMA_CONTENT.video.title);
+      expect(player).toHaveAttribute("src", "https://www.youtube-nocookie.com/embed/1RVvGAKl090?autoplay=1&rel=0");
+      expect(screen.queryByRole("button", { name: BALMA_CONTENT.video.playLabel })).toBeNull();
     });
 
     it("counts the key figures up to their values once in view", () => {

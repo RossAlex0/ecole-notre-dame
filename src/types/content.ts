@@ -46,7 +46,7 @@ export type BalmaContent = {
   highlight: string;
   lede: string;
   drawing: { caption: string; annotation: string; label: string };
-  video: { picture: Picture; playLabel: string; placeholder: string };
+  video: { picture: Picture; playLabel: string; title: string; embedUrl: string };
   keyFigures: readonly KeyFigure[];
 };
 
