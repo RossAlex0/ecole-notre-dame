@@ -1,11 +1,17 @@
+/* Black frame holding the close button above the film. */
 .dialog {
   width: min(960px, calc(100vw - 2 * var(--gutter)));
   max-width: none;
   margin: auto;
-  padding: 0;
-  overflow: visible;
+  padding: 6px 12px 12px;
   border: 0;
-  background: var(--color-primary);
+  border-radius: 12px;
+  background: rgb(14 18 28);
+  box-shadow: 0 24px 60px -20px rgb(0 0 0 / 0.6);
+}
+
+.dialog[open] {
+  display: grid;
 }
 
 .dialog::backdrop {
@@ -14,19 +20,18 @@
 
 .player {
   display: block;
+  border-radius: 6px;
   width: 100%;
   aspect-ratio: 16 / 9;
   border: 0;
 }
 
-/* Sits above the player so it never covers the YouTube controls. */
 .close {
-  position: absolute;
-  bottom: calc(100% + 8px);
-  right: 0;
+  justify-self: end;
   display: grid;
   place-items: center;
-  padding: 6px;
+  margin-bottom: 6px;
+  padding: 4px;
   border: 0;
   background: none;
   color: var(--color-white);
