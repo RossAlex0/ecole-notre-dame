@@ -1,5 +1,7 @@
 import type { BalmaContent } from "@/types/content";
 import { IMAGES } from "@/utils/constants/images";
+import { BALMA_FILM_YOUTUBE_ID } from "@/utils/constants/links";
+import { toYouTubeEmbedUrl } from "@/utils/link";
 
 export const BALMA_CONTENT: BalmaContent = {
   title: "Cap",
@@ -13,7 +15,8 @@ export const BALMA_CONTENT: BalmaContent = {
   video: {
     picture: { image: IMAGES.balma, alt: "", position: "center" },
     playLabel: "Lancer le film du projet",
-    placeholder: "Ici, la vidéo du projet (à fournir)",
+    title: "Film du projet Balma 2027",
+    embedUrl: toYouTubeEmbedUrl(BALMA_FILM_YOUTUBE_ID),
   },
   keyFigures: [
     { icon: "house", value: 3500, unit: " m²", label: "de terrain" },

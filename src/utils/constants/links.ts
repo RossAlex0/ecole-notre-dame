@@ -16,6 +16,9 @@ export const SOCIAL_LINKS: readonly SocialLink[] = [
   },
 ];
 
+// Balma project film: https://www.youtube.com/watch?v=1RVvGAKl090
+export const BALMA_FILM_YOUTUBE_ID = "1RVvGAKl090";
+
 export const HELLOASSO_URL =
   "https://www.helloasso.com/associations/association-du-girou-pour-une-libre-action-educative/formulaires/6";
 

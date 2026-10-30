@@ -88,7 +88,10 @@ export const PRIVACY_CONTENT: LegalPageContent = {
       title: "Cookies et mesure d'audience",
       paragraphs: [
         [
-          "Ce site n'utilise aucun cookie publicitaire ni outil de mesure d'audience, et n'intègre aucun contenu tiers (vidéo, réseau social) déposant des traceurs. Aucun bandeau de consentement n'est donc nécessaire.",
+          "Ce site n'utilise aucun cookie publicitaire ni outil de mesure d'audience. Aucun bandeau de consentement n'est donc nécessaire.",
+        ],
+        [
+          "Le film du projet Balma est hébergé sur YouTube. Le lecteur n'est chargé que si vous cliquez sur le bouton de lecture, en mode « confidentialité renforcée » (youtube-nocookie.com) : YouTube peut alors collecter des données de navigation, selon sa propre politique de confidentialité.",
         ],
         [
           `L'hébergeur (${HOST.name}) peut enregistrer des données techniques de connexion (adresse IP, navigateur) à des fins de sécurité et de bon fonctionnement du service.`,

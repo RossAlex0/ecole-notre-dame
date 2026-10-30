@@ -1,4 +1,4 @@
-import { toSectionHref, toMailHref, toTelHref } from "./link";
+import { toMailHref, toSectionHref, toTelHref, toYouTubeEmbedUrl } from "./link";
 
 describe("toSectionHref", () => {
   describe("defaults", () => {
@@ -72,6 +72,26 @@ describe("toMailHref", () => {
 
     it("encodes reserved characters that would break the query string", () => {
       expect(toMailHref("a@b.fr", { subject: "A&B=C?" })).toBe("mailto:a@b.fr?subject=A%26B%3DC%3F");
+    });
+  });
+});
+
+describe("toYouTubeEmbedUrl", () => {
+  describe("defaults", () => {
+    it("uses the privacy-enhanced domain with autoplay and no unrelated suggestions", () => {
+      expect(toYouTubeEmbedUrl("abc")).toBe("https://www.youtube-nocookie.com/embed/abc?autoplay=1&rel=0");
+    });
+  });
+
+  describe("usage", () => {
+    it("builds the Balma film player URL", () => {
+      expect(toYouTubeEmbedUrl("1RVvGAKl090")).toContain("/embed/1RVvGAKl090?");
+    });
+  });
+
+  describe("edge cases", () => {
+    it("encodes unexpected characters so they cannot break the URL", () => {
+      expect(toYouTubeEmbedUrl("a b?c")).toContain("/embed/a%20b%3Fc?");
     });
   });
 });

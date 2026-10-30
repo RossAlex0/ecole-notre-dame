@@ -1,13 +1,13 @@
 import { ImageResponse } from "next/og";
-import { SCHOOL, SCHOOL_NAME } from "@/utils/constants/contact";
-import { BRAND_COLORS } from "@/utils/constants/site";
+import { SCHOOL_NAME } from "@/utils/constants/contact";
+import { BRAND_COLORS, SITE_PREVIEW } from "@/utils/constants/site";
 import { getLogoDataUrl } from "./brandImage";
 
 export const alt = SCHOOL_NAME;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-// Social preview: crest + school name on the brand blue, gold tagline.
+// Social preview: crest, school name and subtitle only, on white so the navy ribbon of the crest stays visible.
 export default async function OpenGraphImage() {
   const logo = await getLogoDataUrl();
 
@@ -18,22 +18,16 @@ export default async function OpenGraphImage() {
           width: "100%",
           height: "100%",
           display: "flex",
+          flexDirection: "column",
           alignItems: "center",
-          gap: 56,
-          padding: "0 90px",
-          background: BRAND_COLORS.primary,
-          color: BRAND_COLORS.white,
+          justifyContent: "center",
+          background: BRAND_COLORS.white,
+          color: BRAND_COLORS.primary,
         }}
       >
         <img src={logo} width={266} height={280} alt="" />
-        <div style={{ display: "flex", flexDirection: "column", gap: 18, width: 700 }}>
-          {SCHOOL.nameLines.map((line) => (
-            <div key={line} style={{ fontSize: 54, fontWeight: 900, lineHeight: 1.05, textTransform: "uppercase" }}>
-              {line}
-            </div>
-          ))}
-          <div style={{ fontSize: 32, color: BRAND_COLORS.gold }}>Collège catholique · Verfeil → Balma 2027</div>
-        </div>
+        <div style={{ marginTop: 32, fontSize: 64 }}>{SITE_PREVIEW.title}</div>
+        <div style={{ marginTop: 8, fontSize: 38 }}>{SITE_PREVIEW.subtitle}</div>
       </div>
     ),
     size,
