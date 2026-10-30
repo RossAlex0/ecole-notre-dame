@@ -16,6 +16,9 @@ export const SOCIAL_LINKS: readonly SocialLink[] = [
   },
 ];
 
+// Welcome film opened by the hero button: https://www.youtube.com/watch?v=s10p6rdBQQc
+export const WELCOME_FILM_YOUTUBE_ID = "s10p6rdBQQc";
+
 // Balma project film: https://www.youtube.com/watch?v=1RVvGAKl090
 export const BALMA_FILM_YOUTUBE_ID = "1RVvGAKl090";
 

@@ -1,12 +1,12 @@
 import { Button } from "@/components/ui/Button";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { FramedImage } from "@/components/ui/FramedImage";
-import { Icon } from "@/components/ui/Icon";
 import { Lines } from "@/components/ui/Lines";
 import { RichParagraph } from "@/components/ui/RichParagraph";
 import { Text } from "@/components/ui/Text";
 import type { HeroContent } from "@/types/content";
 import { cn } from "@/utils/cn";
+import { FilmButton } from "./FilmButton";
 import styles from "./Hero.module.css";
 
 export type HeroProps = {
@@ -38,18 +38,7 @@ export function Hero({ content }: HeroProps) {
         </div>
 
         <div className={cn(styles.enter, styles.ctas)}>
-          <Button
-            href={filmCta.href}
-            size="sm"
-            aria-label={filmCta.ariaLabel}
-            icon={
-              <span className={styles.play}>
-                <Icon name="play" size={16} />
-              </span>
-            }
-          >
-            {filmCta.label}
-          </Button>
+          <FilmButton cta={filmCta} />
           <Button href={registrationCta.href} variant="outline" size="sm">
             {registrationCta.label}
           </Button>

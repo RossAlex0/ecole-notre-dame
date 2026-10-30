@@ -91,7 +91,7 @@ export const PRIVACY_CONTENT: LegalPageContent = {
           "Ce site n'utilise aucun cookie publicitaire ni outil de mesure d'audience. Aucun bandeau de consentement n'est donc nécessaire.",
         ],
         [
-          "Le film du projet Balma est hébergé sur YouTube. Le lecteur n'est chargé que si vous cliquez sur le bouton de lecture, en mode « confidentialité renforcée » (youtube-nocookie.com) : YouTube peut alors collecter des données de navigation, selon sa propre politique de confidentialité.",
+          "Les films du collège sont hébergés sur YouTube. Le lecteur n'est chargé que si vous lancez une vidéo, en mode « confidentialité renforcée » (youtube-nocookie.com) : YouTube peut alors collecter des données de navigation, selon sa propre politique de confidentialité.",
         ],
         [
           `L'hébergeur (${HOST.name}) peut enregistrer des données techniques de connexion (adresse IP, navigateur) à des fins de sécurité et de bon fonctionnement du service.`,

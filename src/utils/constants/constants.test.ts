@@ -26,7 +26,7 @@ describe("constants", () => {
     });
 
     it("targets existing section ids from every internal link", () => {
-      const contentLinks = [HERO_CONTENT.filmCta, HERO_CONTENT.registrationCta];
+      const contentLinks = [HERO_CONTENT.registrationCta];
 
       [...NAV_LINKS, DONATE_LINK, CONTACT_LINK, ...contentLinks].forEach((link) => {
         expect(sectionAnchors).toContain(link.href);
