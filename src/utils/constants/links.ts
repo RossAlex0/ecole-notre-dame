@@ -12,7 +12,7 @@ export const SOCIAL_LINKS: readonly SocialLink[] = [
   {
     name: "instagram",
     label: "Instagram",
-    href: "https://www.instagram.com/collegenotredamedelaurore/",
+    href: "https://www.instagram.com/notredamedelaurore/",
   },
 ];
 
