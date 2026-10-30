@@ -1,8 +1,8 @@
 import type { HeroContent } from "@/types/content";
 import { IMAGES } from "@/utils/constants/images";
-import { WELCOME_FILM_URL } from "@/utils/constants/links";
+import { WELCOME_FILM_YOUTUBE_ID } from "@/utils/constants/links";
 import { SECTION_IDS } from "@/utils/constants/navigation";
-import { toSectionHref } from "@/utils/link";
+import { toSectionHref, toYouTubeEmbedUrl } from "@/utils/link";
 
 export const HERO_CONTENT: HeroContent = {
   motto: "Candor lucis aeternae",
@@ -21,9 +21,11 @@ export const HERO_CONTENT: HeroContent = {
   ],
   filmCta: {
     label: "Bienvenue à l’Aurore",
-    ariaLabel: "Bienvenue à l’Aurore : voir le film du collège sur YouTube (nouvel onglet)",
-    href: WELCOME_FILM_URL,
-    external: true,
+    ariaLabel: "Bienvenue à l’Aurore : voir le film du collège",
+    video: {
+      title: "Bienvenue à l’Aurore, le film du collège",
+      embedUrl: toYouTubeEmbedUrl(WELCOME_FILM_YOUTUBE_ID),
+    },
   },
   registrationCta: {
     label: "Inscriptions 2027",

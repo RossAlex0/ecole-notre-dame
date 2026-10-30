@@ -17,15 +17,25 @@ export type Picture = {
 
 export type CallToAction = NavLink & {
   ariaLabel?: string;
-  // Opens in a new tab (external site).
-  external?: boolean;
+};
+
+export type Video = {
+  title: string;
+  embedUrl: string;
+};
+
+// Button opening a film in a modal player.
+export type FilmCallToAction = {
+  label: string;
+  ariaLabel?: string;
+  video: Video;
 };
 
 export type HeroContent = {
   motto: string;
   titleLines: readonly string[];
   paragraphs: readonly RichParagraph[];
-  filmCta: CallToAction;
+  filmCta: FilmCallToAction;
   registrationCta: CallToAction;
   picture: Picture;
 };

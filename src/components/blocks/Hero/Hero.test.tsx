@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { Hero } from "./Hero";
 import { HERO_CONTENT } from "@/content/hero";
 import type { HeroContent } from "@/types/content";
@@ -36,17 +36,19 @@ describe("Hero", () => {
       render(<Hero content={HERO_CONTENT} />);
       const { filmCta, registrationCta } = HERO_CONTENT;
 
-      expect(screen.getByRole("link", { name: filmCta.ariaLabel })).toHaveAttribute("href", filmCta.href);
+      expect(screen.getByRole("button", { name: filmCta.ariaLabel })).toHaveAttribute("aria-haspopup", "dialog");
       expect(screen.getByRole("link", { name: registrationCta.label })).toHaveClass("outline");
     });
 
     it("welcomes visitors on the film button", () => {
       render(<Hero content={HERO_CONTENT} />);
 
-      const link = screen.getByRole("link", { name: /^Bienvenue à l’Aurore/ });
-      expect(link).toHaveTextContent("Bienvenue à l’Aurore");
-      expect(link).toHaveAttribute("href", "https://www.youtube.com/watch?v=s10p6rdBQQc");
-      expect(link).toHaveAttribute("target", "_blank");
+      fireEvent.click(screen.getByRole("button", { name: /^Bienvenue à l’Aurore/ }));
+
+      expect(screen.getByTitle(HERO_CONTENT.filmCta.video.title)).toHaveAttribute(
+        "src",
+        "https://www.youtube-nocookie.com/embed/s10p6rdBQQc?autoplay=1&rel=0",
+      );
     });
 
     it("plays the entrance animation on the copy and the photo", () => {
@@ -70,11 +72,11 @@ describe("Hero", () => {
     it("falls back to the visible label when the film CTA has no aria-label", () => {
       const content: HeroContent = {
         ...HERO_CONTENT,
-        filmCta: { label: "Voir le film", href: "#balma" },
+        filmCta: { label: "Voir le film", video: HERO_CONTENT.filmCta.video },
       };
       render(<Hero content={content} />);
 
-      expect(screen.getByRole("link", { name: "Voir le film" })).toBeInTheDocument();
+      expect(screen.getByRole("button", { name: "Voir le film" })).toBeInTheDocument();
     });
   });
 });

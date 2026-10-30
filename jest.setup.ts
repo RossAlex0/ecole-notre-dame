@@ -37,6 +37,15 @@ class MockIntersectionObserver {
   }
 }
 
+// jsdom knows <dialog> but not its modal methods.
+HTMLDialogElement.prototype.showModal = function showModal(this: HTMLDialogElement) {
+  this.open = true;
+};
+HTMLDialogElement.prototype.close = function close(this: HTMLDialogElement) {
+  this.open = false;
+  this.dispatchEvent(new Event("close"));
+};
+
 // jsdom elements cannot scroll.
 Element.prototype.scrollTo = function scrollTo() {};
 
