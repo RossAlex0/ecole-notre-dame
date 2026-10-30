@@ -9,7 +9,7 @@ import { NOT_FOUND_CONTENT } from "@/content/errors";
 import { LEGAL_NOTICE_CONTENT, PRIVACY_CONTENT } from "@/content/legal";
 import { SCHOOL } from "@/utils/constants/contact";
 import { LEGAL_LINKS, ROUTES } from "@/utils/constants/navigation";
-import { BRAND_COLORS, SITE_URL } from "@/utils/constants/site";
+import { BRAND_COLORS, SITE_DESCRIPTION, SITE_TAGLINE, SITE_TITLE, SITE_URL } from "@/utils/constants/site";
 import robots from "./robots";
 import sitemap from "./sitemap";
 
@@ -46,6 +46,13 @@ describe("SEO", () => {
         SCHOOL.address,
       );
       expect(jsonLd.logo).toBe("http://localhost:3000/images/logo.png");
+    });
+
+    it("presents the school as independent in titles, description and preview tagline", () => {
+      [SITE_TITLE, SITE_DESCRIPTION, SITE_TAGLINE].forEach((text) => {
+        expect(text).toContain("Collège indépendant");
+        expect(text).not.toMatch(/catholique/i);
+      });
     });
   });
 
