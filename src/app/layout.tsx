@@ -5,7 +5,7 @@ import { SkipLink } from "@/components/layout/SkipLink";
 import { StructuredData } from "@/components/layout/StructuredData";
 import { SCHOOL_NAME } from "@/utils/constants/contact";
 import { SECTION_IDS } from "@/utils/constants/navigation";
-import { SITE_DESCRIPTION, SITE_TITLE, SITE_URL, THEME_COLOR } from "@/utils/constants/site";
+import { SITE_DESCRIPTION, SITE_KEYWORDS, SITE_TITLE, SITE_URL, THEME_COLOR } from "@/utils/constants/site";
 import { fontVariables } from "@/styles/fonts";
 import "@/styles/globals.css";
 
@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: { default: SITE_TITLE, template: `%s | ${SCHOOL_NAME}` },
   description: SITE_DESCRIPTION,
+  keywords: SITE_KEYWORDS,
   applicationName: SCHOOL_NAME,
   alternates: { canonical: "/" },
   robots: { index: true, follow: true },

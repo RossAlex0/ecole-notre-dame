@@ -9,7 +9,7 @@ import { NOT_FOUND_CONTENT } from "@/content/errors";
 import { LEGAL_NOTICE_CONTENT, PRIVACY_CONTENT } from "@/content/legal";
 import { SCHOOL } from "@/utils/constants/contact";
 import { LEGAL_LINKS, ROUTES } from "@/utils/constants/navigation";
-import { BRAND_COLORS, SITE_DESCRIPTION, SITE_PREVIEW, SITE_TITLE, SITE_URL } from "@/utils/constants/site";
+import { BRAND_COLORS, SITE_DESCRIPTION, SITE_KEYWORDS, SITE_PREVIEW, SITE_TITLE, SITE_URL } from "@/utils/constants/site";
 import robots from "./robots";
 import sitemap from "./sitemap";
 
@@ -46,6 +46,12 @@ describe("SEO", () => {
         SCHOOL.address,
       );
       expect(jsonLd.logo).toBe("http://localhost:3000/images/logo.png");
+    });
+
+    it("targets the school name and its area in the keywords, without duplicates", () => {
+      expect(SITE_KEYWORDS).toEqual(expect.arrayContaining(["Toulouse", "Balma", "collège", "école"]));
+      expect(SITE_KEYWORDS[0]).toBe("Collège Notre-Dame de l'Aurore");
+      expect(new Set(SITE_KEYWORDS).size).toBe(SITE_KEYWORDS.length);
     });
 
     it("presents the school as independent in titles, description and preview image", () => {
