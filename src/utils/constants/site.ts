@@ -9,8 +9,8 @@ export const SITE_URL =
 
 export const SITE_TITLE = `${SCHOOL_NAME} | Collège indépendant, Verfeil & Balma`;
 
-// Phrase shown under the crest on the social preview image.
-export const SITE_TAGLINE = "Collège indépendant · Verfeil → Balma 2027";
+// Two lines shown under the crest on the social preview image.
+export const SITE_PREVIEW = { title: "Notre-Dame de l’Aurore", subtitle: "Collège indépendant" } as const;
 
 export const SITE_DESCRIPTION =
   "Collège indépendant de la 6ᵉ à la 3ᵉ, à Verfeil puis à Balma dès 2027 : enseignement exigeant, classes à taille humaine. Inscriptions 2027 ouvertes.";
